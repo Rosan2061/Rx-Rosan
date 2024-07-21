@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <met#aeb3b8et="utf-8">
-       <link rel="icon" type="image/x-icon" href="image.Rx/Rx.image3.png">
+         <meta charset="UTF-8">
+<link rel="shortcut icon" type="x-icon" href="image.Rx/Rx.image3.png">
+
         <title>Rosan Khattri Chettri</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
          
@@ -31,6 +32,74 @@
     </head>
 
     <body>
+	  <!--Flag section -->
+<div class="flag-container">
+    <img src="image.Rx/Rx.image17.gif" alt="Nepal Flag">
+</div>
+
+<style>
+.flag-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.flag-container img {
+    width: 2cm; /* Adjust as needed */
+    height: 2cm; /* Adjust as needed */
+}
+</style>
+
+<!-- time & date section-->
+<div class="clock-date">
+    <div id="clock"></div>
+    <div id="date"></div>
+   </div>
+
+<style>
+.clock-date {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 24px;
+    font-weight: bold; /* Make the text bold */
+}
+</style>
+
+<script>
+function updateTimeDate() {
+    const now = new Date();
+
+    let hours = now.getHours();
+    const minutes = now.getMinutes();
+    const seconds = now.getSeconds();
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    const strTime = `${hours}:${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds} ${ampm}`;
+
+    const year = now.getFullYear();
+    const month = now.getMonth() + 1; // Months are zero based
+    const day = now.getDate();
+    const strDate = `${year}/${month < 10 ? '0' : ''}${month}/${day < 10 ? '0' : ''}${day}`;
+
+    document.getElementById('clock').innerHTML = strTime;
+    document.getElementById('date').innerHTML = strDate;
+}
+
+setInterval(updateTimeDate, 1000);
+</script>
+
+<!-- about section-->
+<section id="about">
+    <div class="container mt-4 pt-4">
+        <B><H1 class="text-center"><P class="red-text">About Me :</P></h1></B>
+<style>
+    .red-text {
+    color: red;
+    font-weight: bold;
+    }
+</style>
+  
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
