@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rosan Khattri Chettri Form</title>
+
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-heading">ㅤ亗ㅤᏒχㅤRosanㅤFormㅤSectionㅤ</h1>
+        <form id="admissionForm" class="form">
+            <div class="form-group">
+                <label for="name">Name ( FULL NAME ) *</label>
+                <input type="text" id="name" name="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address ( FULL ADDRESS LOCATION ) *</label>
+                <input type="text" id="address" name="address" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="mobile">Mobile No. *</label>
+                <input type="tel" id="mobile" name="mobile" class="form-control" pattern="\+977-\d{2}-\d{7}" placeholder="+977 xxxxxxxxxx" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label>Photoshop</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="Photoshop" value="Logo Making"> Logo Making</label>
+                    <label><input type="radio" name="Photoshop" value="Banner Designing"> Banner Designing</label>
+                    <label><input type="radio" name="Photoshop" value="Photo Editing"> Photo Editing</label>
+                    <label><input type="radio" name="Photoshop" value="Youtube Thumbnail designing"> Youtube Thumbnail designing</label>
+                    <label><input type="radio" name="Photoshop" value="Other"> Other</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="photoshopRemark">Remark</label>
+                <input type="text" id="photoshopRemark" name="photoshopRemark" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Video Editing</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="videoEditing" value="Short Introduction Video Editing"> Short Introduction Video Editing</label>
+                    <label><input type="radio" name="videoEditing" value="Entry Introduction Video Editing"> Entry Introduction Video Editing</label>
+                    <label><input type="radio" name="videoEditing" value="End Introduction Video Editing"> End Introduction Video Editing</label>
+                    <label><input type="radio" name="videoEditing" value="Custom Video Editing"> Custom Video Editing</label>
+                    <label><input type="radio" name="videoEditing" value="Advertisement video editing"> Advertisement video editing</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="videoEditingRemark">Remark</label>
+                <input type="text" id="videoEditingRemark" name="videoEditingRemark" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Accept Our Terms Or Policy *</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="termsPolicy" value="Agree" required> Agree</label>
+                    <label><input type="radio" name="termsPolicy" value="Disagree" required> Disagree</label>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="button" class="btn btn-submit" onclick="submitForm()">Submit</button>
+                <button type="button" class="btn btn-view" onclick="showPasswordPrompt()">View Responses</button>
+            </div>
+            <div class="note">
+                <p>Please Fill Real Data, For Any Not Delay and Mistake in Future Process.</p>
+            </div>
+        </form>
+        <div id="responseSection" class="hidden response-section">
+            <h2 class="response-heading">Responses</h2>
+            <p>Total Responses: <span id="responseCount">0</span></p>
+            <div id="responses" class="response-list"></div>
+        </div>
+  <style>
+                .instructions {
+            color: blue;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            margin: 20px 0;
+        }
+
+        .instructions h3 {
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: underline;
+            margin-bottom: 10px;
+        }
+
+        .instructions p {
+            margin: 5px 0;
+        }
+    </style>
+  <div class="instructions">
+        <h3>Instructions for Fill Data:</h3>
+        <p>- For submit it first fill required fields:</p>
+        <ul>
+            <li>Name ( FULL NAME ) *</li>
+            <li>Address ( FULL ADDRESS LOCATION ) *</li>
+            <li>Mobile No. *</li>
+            <li>Email *</li>
+            <li>Accept Our Terms Or Policy *</li>
+        </ul>
+        <p>These are very important detail to submit and select also other option by your usages.</p>
+        <p>- On photoshop section remark section you can write your custom message about photoshop editing type.</p>
+        <p>- On video editing section remark section you can write your custom message about video editing type.</p>
+        <p>- After fill up data then click up to submit button to order. Then admin can receive your submit data and contact you following your providing email or phone number.</p>
+    </div>
+</div>
+    <script>
+const PASSWORD = "admin123"; // Change to the desired password
+
+// Function to handle form submission
+function submitForm() {
+    const name = document.getElementById('name').value.trim();
+    const address = document.getElementById('address').value.trim();
+    const mobile = document.getElementById('mobile').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const photoshopChosen = document.querySelector('input[name="Photoshop"]:checked')?.value;
+    const videoEditingChosen = document.querySelector('input[name="videoEditing"]:checked')?.value;
+    const photoshopRemark = document.getElementById('photoshopRemark').value.trim();
+    const videoEditingRemark = document.getElementById('videoEditingRemark').value.trim();
+    const termsPolicy = document.querySelector('input[name="termsPolicy"]:checked')?.value;
+
+    if (!name || !address || !mobile || !email || !termsPolicy) {
+        alert("Please fill in all required fields.");
+        return;
+    }
+
+    const now = new Date();
+    const response = {
+        name: name,
+        address: address,
+        mobile: mobile,
+        email: email,
+        photoshopChosen: photoshopChosen,
+        photoshopRemark: photoshopRemark,
+        videoEditingChosen: videoEditingChosen,
+        videoEditingRemark: videoEditingRemark,
+        termsPolicy: termsPolicy,
+        timestamp: now.toLocaleString() // Add timestamp
+    };
+
+    let responses = JSON.parse(localStorage.getItem('responses')) || [];
+    responses.push(response);
+    localStorage.setItem('responses', JSON.stringify(responses));
+
+    alert("Form submitted successfully!");
+    document.getElementById('admissionForm').reset();
+}
+
+// Function to show the password prompt for admin access
+function showPasswordPrompt() {
+    const password = prompt("Enter Admin Password:");
+    if (password === PASSWORD) {
+        displayResponses();
+    } else {
+        alert("Incorrect password.");
+    }
+}
+
+// Function to display all responses with delete options and count
+function displayResponses() {
+    const responses = JSON.parse(localStorage.getItem('responses')) || [];
+    const responseContainer = document.getElementById('responses');
+    const responseCount = document.getElementById('responseCount');
+    responseContainer.innerHTML = '';
+    responseCount.textContent = responses.length; // Update response count
+    responses.forEach((response, index) => {
+        responseContainer.innerHTML += `
+            <div class="response-item">
+                <p><strong>Name:</strong> ${response.name}</p>
+                <p><strong>Address:</strong> ${response.address}</p>
+                <p><strong>Mobile:</strong> ${response.mobile}</p>
+                <p><strong>Email:</strong> ${response.email}</p>
+                <p><strong>Photoshop Chosen Option:</strong> ${response.photoshopChosen || 'Not specified'}</p>
+                <p><strong>Photoshop Remark:</strong> ${response.photoshopRemark || 'None'}</p>
+                <p><strong>Video Editing Chosen Option:</strong> ${response.videoEditingChosen || 'Not specified'}</p>
+                <p><strong>Video Editing Remark:</strong> ${response.videoEditingRemark || 'None'}</p>
+                <p><strong>Terms Policy:</strong> ${response.termsPolicy}</p>
+                <p><strong>Submitted At:</strong> ${response.timestamp}</p> <!-- Display timestamp -->
+                <button class="delete-btn" onclick="deleteResponse(${index})">Delete</button>
+            </div>
+        `;
+    });
+    document.getElementById('responseSection').classList.remove('hidden');
+}
+
+// Function to delete a response
+function deleteResponse(index) {
+    let responses = JSON.parse(localStorage.getItem('responses')) || [];
+    responses.splice(index, 1);
+    localStorage.setItem('responses', JSON.stringify(responses));
+    displayResponses();
+}
+
+</script>
+    <style>
+/* Basic reset and setup */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container styling */
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+/* Heading styling */
+.main-heading {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+/* Form styling */
+.form {
+    display: grid;
+    gap: 1rem;
+}
+
+/* Form group styling */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0.75rem;
+    font-size: 1rem;
+    background-color: #fafafa;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    background-color: #ffffff;
+    outline: none;
+}
+
+/* Radio group styling */
+.radio-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.radio-group label {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 0.5rem;
+}
+
+/* Button styling */
+.btn {
+    padding: 0.75rem 1.25rem;
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    text-align: center;
+    margin: 0.5rem 0;
+    display: inline-block;
+}
+
+.btn-submit {
+    background-color: #28a745;
+}
+
+.btn-view {
+    background-color: #007bff;
+}
+
+.btn-submit:hover {
+    background-color: #218838;
+    transform: scale(1.02);
+}
+
+.btn-view:hover {
+    background-color: #0056b3;
+    transform: scale(1.02);
+}
+
+/* Note styling */
+.note {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+    text-align: center;
+}
+
+/* Hidden class */
+.hidden {
+    display: none;
+}
+
+/* Response section styling */
+.response-section {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.response-heading {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.response-list {
+    margin-top: 1rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1.5rem;
+    }
+
+    .main-heading {
+        font-size: 1.6rem;
+    }
+
+    .btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .note {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .main-heading {
+        font-size: 1.4rem;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 0.8rem;
+        font-size: 1rem;
+    }
+
+    .note {
+        font-size: 0.7rem;
+    }
+}
+
+</styles>
+
+
+</body>
+</html>
