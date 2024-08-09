@@ -40,6 +40,7 @@
     <div class="clock-date">
         <div id="clock"></div>
         <div id="date"></div>
+        <div id="weekday"></div> <!-- Div for weekday -->
     </div>
 </div>
 
@@ -70,6 +71,11 @@
     font-weight: bold; /* Make the text bold */
     color: red; /* Set the text color to red */
 }
+
+#date, #weekday {
+    margin: 0; /* Remove any default margins */
+    line-height: 1; /* Set line-height to 1 to ensure no extra space */
+}
 </style>
 
 <script>
@@ -95,12 +101,17 @@ function updateTimeDate() {
     const month = now.getMonth() + 1; // Months are zero-based
     const day = now.getDate();
 
+    // Get the name of the weekday
+    const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const weekday = weekdays[now.getDay()];
+
     // Pad month and day with leading zeros if necessary
     const strDate = `${year}/${month < 10 ? '0' : ''}${month}/${day < 10 ? '0' : ''}${day}`;
 
-    // Update the clock and date in the HTML
+    // Update the clock, date, and weekday in the HTML
     document.getElementById('clock').innerHTML = strTime;
     document.getElementById('date').innerHTML = strDate;
+    document.getElementById('weekday').innerHTML = weekday; // Display the weekday below the date
 }
 
 // Update the time and date every second
