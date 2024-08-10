@@ -151,6 +151,184 @@ updateTimeDate();
                             <a class="btn btn-secondary btn-square mx-1" href="https://www.linkedin.com/in/rosan-xettri-67b0052ab/"><i class="fab fa-linkedin-in"></i></a></P>
                                                    </div>
 			   
+    <!---Circle Section-->
+<div class="circle-container">
+        <div class="circle">
+            <div class="plus-icon">+</div>
+            <div class="center-point"></div>
+            <div class="menu-item" id="home" data-link="index.html">
+                <img src="C:\Users\rkc24\Downloads\amination\image\home.png" alt="Home">
+            </div>
+            <div class="menu-item" id="contact" data-link="contact.html">
+                <img src="C:\Users\rkc24\Downloads\amination\image\contact.png" alt="Contact">
+            </div>
+            <div class="menu-item" id="about" data-link="about.html">
+                <img src="C:\Users\rkc24\Downloads\amination\image\about.png" alt="About">
+            </div>
+            <div class="menu-item" id="policy" data-link="policy.html">
+                <img src="C:\Users\rkc24\Downloads\amination\image\policy.png" alt="Policy">
+            </div>
+            <div class="menu-item" id="settings" data-link="settings.html">
+                <img src="C:\Users\rkc24\Downloads\amination\image\setting.png" alt="Settings">
+            </div>
+            <div class="menu-item" id="shop" data-link="shop.html">
+                <img src="C:\Users\rkc24\Downloads\amination\image\shop.png" alt="Shop">
+            </div>
+            <div class="menu-item" id="linkedin" data-link="https://www.linkedin.com">
+                <img src="C:\Users\rkc24\Downloads\amination\image\linkedin.png" alt="LinkedIn">
+            </div>
+            <div class="menu-item" id="twitter" data-link="https://www.twitter.com">
+                <img src="C:\Users\rkc24\Downloads\amination\image\twitter.png" alt="Twitter">
+            </div>
+            <div class="menu-item" id="youtube" data-link="https://www.youtube.com">
+                <img src="C:\Users\rkc24\Downloads\amination\image\youtube.png" alt="YouTube">
+            </div>
+            <div class="menu-item" id="facebook" data-link="www.facebook.com">
+                <img src="C:\Users\rkc24\Downloads\amination\image\facebook.png" alt="facebook">
+            </div>
+            <div class="menu-item" id="logo" data-link="#">
+                <img src="C:\Users\rkc24\Downloads\amination\image\logo.png" alt="logo">
+            </div>
+
+                    </div>
+    </div>
+<script>
+document.querySelector('.circle').addEventListener('click', function() {
+    const circle = document.querySelector('.circle');
+    circle.classList.toggle('expanded');
+});
+
+document.querySelectorAll('.menu-item').forEach(item => {
+    item.addEventListener('click', function() {
+        // Handle menu item click
+        const link = this.getAttribute('data-link');
+        if (link) {
+            window.location.href = link;
+        }
+    });
+
+});
+
+</script>
+
+<style>
+
+.circle-container {
+    position: fixed; /* Change to fixed to keep it in view */
+    bottom: 15%; /* Center vertically */
+    left:90%; /* Center horizontally */
+    transform: translate(-50%, 50%); /* Adjust position to center the circle */
+    z-index: 1000; /* Ensure it's on top of other elements */
+}
+
+.circle {
+    width: 1cm;
+    height: 1cm;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.7s ease-in-out;
+    background: radial-gradient(circle at center, rgba(255, 0, 0, 0.6), rgba(0, 0, 255, 0.6), rgba(0, 255, 0, 0.6));
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.7), 
+                0 0 30px rgba(0, 255, 0, 0.7),
+                0 0 40px rgba(0, 0, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.center-point {
+    width: 3mm;
+    height: 3mm;
+    background-color: #3498db;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity 0.7s ease-in-out;
+}
+
+.circle.expanded {
+    width: 4cm;
+    height: 4cm;
+    background: #3498db; /* Blue background for expanded circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.center-image {
+    width: 2cm;
+    height: 2cm;
+    background: url('C:\Users\rkc24\Downloads\amination\image\logo.png') no-repeat center center;
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+.menu-item {
+    position: absolute;
+    width: 1cm;
+    height: 1cm;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    overflow: hidden;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.6); /* Slightly dark background for better visibility */
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.8),
+                0 0 10px rgba(0, 255, 0, 0.8),
+                0 0 10px rgba(0, 0, 255, 0.8); /* Glowing effect */
+}
+
+.menu-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.circle.expanded .menu-item {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Position buttons around the circle's outer edge */
+.circle.expanded .menu-item:nth-child(1) { transform: rotate(calc(360deg / 10 * 0)) translateY(-2cm) rotate(calc(-360deg / 10 * 0)); }
+.circle.expanded .menu-item:nth-child(2) { transform: rotate(calc(360deg / 10 * 1)) translateY(-2cm) rotate(calc(-360deg / 10 * 1)); }
+.circle.expanded .menu-item:nth-child(3) { transform: rotate(calc(360deg / 10 * 2)) translateY(-2cm) rotate(calc(-360deg / 10 * 2)); }
+.circle.expanded .menu-item:nth-child(4) { transform: rotate(calc(360deg / 10 * 3)) translateY(-2cm) rotate(calc(-360deg / 10 * 3)); }
+.circle.expanded .menu-item:nth-child(5) { transform: rotate(calc(360deg / 10 * 4)) translateY(-2cm) rotate(calc(-360deg / 10 * 4)); }
+.circle.expanded .menu-item:nth-child(6) { transform: rotate(calc(360deg / 10 * 5)) translateY(-2cm) rotate(calc(-360deg / 10 * 5)); }
+.circle.expanded .menu-item:nth-child(7) { transform: rotate(calc(360deg / 10 * 6)) translateY(-2cm) rotate(calc(-360deg / 10 * 6)); }
+.circle.expanded .menu-item:nth-child(8) { transform: rotate(calc(360deg / 10 * 7)) translateY(-2cm) rotate(calc(-360deg / 10 * 7)); }
+.circle.expanded .menu-item:nth-child(9) { transform: rotate(calc(360deg / 10 * 8)) translateY(-2cm) rotate(calc(-360deg / 10 * 8)); }
+.circle.expanded .menu-item:nth-child(10) { transform: rotate(calc(360deg / 10 * 9)) translateY(-2cm) rotate(calc(-360deg / 10 * 9)); }
+.circle.expanded .menu-item:nth-child(11) { transform: rotate(calc(360deg / 10 * 10)) translateY(-2cm) rotate(calc(-360deg / 10 * 10)); }
+.circle.expanded .menu-item:nth-child(12) { transform: rotate(calc(360deg / 10 * 11)) translateY(-2cm) rotate(calc(-360deg / 10 * 11)); }
+
+
+/* Glowing effect */
+.menu-item img {
+    transition: filter 0.5s ease;
+}
+
+.circle.expanded .menu-item:hover img {
+    filter: brightness(1.2) contrast(1.2);
+}
+
+</style>
+</section>
 
 
            </div>
