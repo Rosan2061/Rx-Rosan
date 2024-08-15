@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rosan's Creative Services</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            color: #fff;
+            padding: 40px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        header p {
+            font-size: 1.2em;
+            margin: 10px 0 0;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0;
+        }
+        nav ul li a {
+            color: #fff;
+            padding: 15px 20px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #555;
+        }
+        .container {
+            flex: 1;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-bottom: 60px; /* Space for the footer */
+        }
+        .service {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+        .service:hover {
+            transform: translateY(-5px);
+        }
+        .service h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        .service p {
+            color: #555;
+            line-height: 1.6;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Rosan's Creative Services</h1>
+        <p>Expertise in Photoshop, Designing, Webpage Designing, Photo Editing, and Video Editing</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#photoshop">Photoshop</a></li>
+            <li><a href="#designing">Designing</a></li>
+            <li><a href="#webpage-designing">Webpage Designing</a></li>
+            <li><a href="#photo-editing">Photo Editing</a></li>
+            <li><a href="#video-editing">Video Editing</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="service" id="photoshop">
+            <h2>Photoshop</h2>
+            <p>Proficient in Adobe Photoshop, creating and editing high-quality images with precision and creativity.</p>
+        </div>
+
+        <div class="service" id="designing">
+            <h2>Designing</h2>
+            <p>Crafting visually impactful designs, including logos and business cards, with a focus on clarity and effectiveness.</p>
+        </div>
+
+        <div class="service" id="webpage-designing">
+            <h2>Webpage Designing</h2>
+            <p>Specializing in creating user-friendly, visually appealing websites that effectively communicate your brand message.</p>
+        </div>
+
+        <div class="service" id="photo-editing">
+            <h2>Photo Editing</h2>
+            <p>Enhancing and retouching photos to ensure they look polished and meet project goals.</p>
+        </div>
+
+        <div class="service" id="video-editing">
+            <h2>Video Editing</h2>
+            <p>Producing concise, visually engaging videos that effectively convey your message.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Rosan Khattri Chettri. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

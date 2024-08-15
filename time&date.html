@@ -1,0 +1,87 @@
+<div class="top-right-corner">
+    <div class="flag-container">
+        <img src="image.Rx/Rx.image17.gif" alt="Nepal Flag">
+    </div>
+    <div class="clock-date">
+        <div id="clock"></div>
+        <div id="date"></div>
+        <div id="weekday"></div> <!-- Div for weekday -->
+    </div>
+</div>
+
+<style>
+.top-right-corner {
+    position: fixed;
+    top: 10px;
+    right: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px; /* Optional: to give it a nice rounded border */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Optional: to give it a shadow effect */
+    z-index: 1000; /* Ensure it stays on top of other elements */
+    background: transparent; /* Make the background transparent */
+}
+
+.flag-container img {
+    width: 1cm; /* Adjust to 1 cm */
+    height: 1cm; /* Adjust to 1 cm */
+    margin-bottom: 10px; /* Space between flag and time/date */
+}
+
+.clock-date {
+    text-align: center;
+    font-size: 0.3cm; /* Set the font size to 0.3 cm */
+    font-weight: bold; /* Make the text bold */
+    color: red; /* Set the text color to red */
+}
+
+#date, #weekday {
+    margin: 0; /* Remove any default margins */
+    line-height: 1; /* Set line-height to 1 to ensure no extra space */
+}
+</style>
+
+<script>
+function updateTimeDate() {
+    const now = new Date();
+
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+    let seconds = now.getSeconds();
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+
+    // Convert 24-hour time to 12-hour time
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+
+    // Pad minutes and seconds with leading zeros if necessary
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+
+    const strTime = `${hours}:${minutes}:${seconds} ${ampm}`;
+
+    const year = now.getFullYear();
+    const month = now.getMonth() + 1; // Months are zero-based
+    const day = now.getDate();
+
+    // Get the name of the weekday
+    const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const weekday = weekdays[now.getDay()];
+
+    // Pad month and day with leading zeros if necessary
+    const strDate = `${year}/${month < 10 ? '0' : ''}${month}/${day < 10 ? '0' : ''}${day}`;
+
+    // Update the clock, date, and weekday in the HTML
+    document.getElementById('clock').innerHTML = strTime;
+    document.getElementById('date').innerHTML = strDate;
+    document.getElementById('weekday').innerHTML = weekday; // Display the weekday below the date
+}
+
+// Update the time and date every second
+setInterval(updateTimeDate, 1000);
+
+// Initialize with the current time and date
+updateTimeDate();
+</script>
