@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Neon Glowing Card</title>
+    <style>
+        @keyframes rgbGlow {
+            0% {
+                box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000;
+                color: #ff0000;
+            }
+            33% {
+                box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+                color: #00ff00;
+            }
+            66% {
+                box-shadow: 0 0 10px #0000ff, 0 0 20px #0000ff, 0 0 30px #0000ff;
+                color: #0000ff;
+            }
+            100% {
+                box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000;
+                color: #ff0000;
+            }
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            background-color: black; /* Solid background for contrast */
+        }
+        .card {
+            width: 10cm;
+            height: 5cm;
+            padding: 10px;
+            background-image: url('D:/ALL FILES/Website files/card design/image1.jpg'); /* Replace with your background image link */
+            background-size: cover;
+            background-position: center;
+            border: 3px solid #ff0000;
+            box-shadow: 0 0 10px #ff0000, 
+                        0 0 20px #ff0000, 
+                        0 0 30px #ff0000;
+            position: relative;
+            animation: rgbGlow 5s ease infinite; /* Apply RGB glowing effect */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+         .image-box {
+            width: 1cm;
+            height: 1cm;
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Ensures the image fits within the container */
+            border-radius: 50%; /* Optional: make the image circular */
+        }
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image covers the entire box */
+        }
+        .details {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #00ff00; /* Initial green text color */
+            animation: rgbGlowText 5s ease infinite; /* Apply RGB glowing effect to text */
+            background: none; /* Remove any background */
+            border: none; /* Remove any border */
+            box-shadow: none; /* Remove any box shadow */
+        }
+        .details .label {
+            font-weight: bold;
+            color: inherit; /* Inherit the color from the parent with RGB animation */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="image-box">
+            <img src="D:\ALL FILES\Website files\card design\logo.png" alt="Profile Image"> <!-- Replace with user's profile image link -->
+        </div>
+        <div class="details">
+            <p><span class="label">Name:</span> Rosank KC</p>
+            <p><span class="label">Address:</span> Banganga</p>
+            <p><span class="label">Phone:</span> <a href="tel:+1234567890" style="color: inherit; text-decoration: none;">+1234567890</a></p>
+            <p><span class="label">Email:</span> <a href="mailto:rkc242855@gmail.com" style="color: inherit; text-decoration: none;">rkc242855@gmail.com</a></p>
+        </div>
+    </div>
+</body>
+</html>
