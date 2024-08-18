@@ -251,5 +251,90 @@ updateTimeDate();
 setInterval(updateTimeDate, 1000); // Update time every second
 
     </script>
+     <!-- Home Button -->
+    <button class="home-btn" onclick="location.href='index.html'">Home</button>
+
+<style>
+        /* Style the button */
+        .home-btn {
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            animation: rgb-glow 3s infinite;
+        }
+
+        /* Add a hover effect */
+        .home-btn:hover {
+            background-color: rgba(0, 0, 0, 0.7); /* Slightly darken on hover */
+        }
+
+        /* Define the RGB background glow animation */
+        @keyframes rgb-glow {
+            0% {
+                background-color: rgb(255, 0, 0); /* Red */
+                box-shadow: 0 0 15px rgb(255, 0, 0);
+            }
+            33% {
+                background-color: rgb(0, 255, 0); /* Green */
+                box-shadow: 0 0 15px rgb(0, 255, 0);
+            }
+            66% {
+                background-color: rgb(0, 0, 255); /* Blue */
+                box-shadow: 0 0 15px rgb(0, 0, 255);
+            }
+            100% {
+                background-color: rgb(255, 0, 0); /* Red */
+                box-shadow: 0 0 15px rgb(255, 0, 0);
+            }
+        }
+
+        /* Define the click animation */
+        @keyframes click-glow {
+            0% {
+                box-shadow: 0 0 10px red;
+            }
+            50% {
+                box-shadow: 0 0 40px red;
+            }
+            100% {
+                box-shadow: 0 0 10px red;
+            }
+        }
+
+        /* Apply the animation on click */
+        .home-btn:active {
+            animation: click-glow 0.5s ease;
+            background-color: #ff0000;
+        }
+
+        /* Define the font glow animation */
+        @keyframes text-glow {
+            0% {
+                text-shadow: 0 0 10px blue;
+            }
+            50% {
+                text-shadow: 0 0 40px blue;
+            }
+            100% {
+                text-shadow: 0 0 10px blue;
+            }
+        }
+
+        /* Apply the font glow animation to the button text */
+        .home-btn {
+            animation: text-glow 1.5s ease-in-out infinite, rgb-glow 3s infinite;
+        }
+    </style>
+
 </body>
 </html>
