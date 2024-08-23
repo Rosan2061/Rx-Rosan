@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <!-- Favicons -->
+  <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
+    <title>Rx Rosan - Animation</title>
     <title>Rx Rosan - Animation</title>
     <style>
         body, html {
@@ -33,7 +34,7 @@
 
         .char {
             opacity: 0;
-            animation: showChar 1s forwards;
+            animation: showChar 0.5s forwards; /* Adjusted for quicker animation */
         }
 
         @keyframes showChar {
@@ -43,21 +44,21 @@
         }
 
         .char:nth-child(1) { animation-delay: 0s; }
-        .char:nth-child(2) { animation-delay: 1.2s; }
-        .char:nth-child(3) { animation-delay: 1.4s; }
-        .char:nth-child(4) { animation-delay: 5.4s; }
-        .char:nth-child(5) { animation-delay: 5.6s; }
-        .char:nth-child(6) { animation-delay: 5.8s; }
-        .char:nth-child(7) { animation-delay: 6s; }
-        .char:nth-child(8) { animation-delay: 6.2s; }
-        .char:nth-child(9) { animation-delay: 6.4s; } /* For the additional space */
+        .char:nth-child(2) { animation-delay: 0.2s; }
+        .char:nth-child(3) { animation-delay: 0.6s; }
+        .char:nth-child(4) { animation-delay: 2.0s; }
+        .char:nth-child(5) { animation-delay: 2.4s; }
+        .char:nth-child(6) { animation-delay: 2.6s; }
+        .char:nth-child(7) { animation-delay: 2.8s; }
+        .char:nth-child(8) { animation-delay: 3.2s; }
+        .char:nth-child(9) { animation-delay: 3.6s; } /* For the additional space */
 
         #logo {
             opacity: 0;
             width: 150px;
             height: auto;
-            animation: fadeIn 2s forwards, glow 0.4s ease-in-out;
-            animation-delay: 6.6s; /* Start glowing effect after 6.6s */
+            animation: fadeIn 0.5s forwards, glow 0.4s ease-in-out; /* Shortened the fade-in time */
+            animation-delay: 3.6s; /* Start glowing effect after 3 seconds */
         }
 
         @keyframes fadeIn {
@@ -83,7 +84,7 @@
         <div id="animationText">
             <span class="char">R</span>
             <span class="char">x</span>
-            <span class="char"> </span> <!-- Space after "Rx" -->
+            <span class="char">_</span> <!-- Space after "Rx" -->
             <span class="char"> </span> <!-- Additional space between "Rx" and "Rosan" -->
             <span class="char">R</span>
             <span class="char">o</span>
@@ -99,7 +100,7 @@
         setTimeout(function() {
             localStorage.setItem('hasSeenAnimation', 'true'); // Mark that the animation has been seen
             window.location.href = "RxRosan.html"; // Redirect to the main content page
-        }, 8800); // 8.8 seconds = time for the animation + logo fade-in to finish
+        }, 5000); // 5 seconds = 3 seconds for the animation + 2 seconds for the logo fade-in to finish
     </script>
 </body>
 </html>
