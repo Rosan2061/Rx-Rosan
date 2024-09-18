@@ -3,148 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
+    <title>Welcome | Rosan Khattri Chettri</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-            overflow: hidden; /* Prevent scrollbars */
-        }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
 
-        .container {
-            text-align: center;
-            position: relative; /* Position relative to place the Skip button properly */
-            padding: 20px; /* Add padding to ensure space for Skip button */
-        }
+/* Background image animation */
+@keyframes backgroundChange {
+    0% {
+        background-image: url('C:/Users/rkc24/Downloads/animation/img/im1.jpg');
+    }
+    25% {
+        background-image: url('C:/Users/rkc24/Downloads/animation/img/im2.jpg');
+    }
+    50% {
+        background-image: url('C:/Users/rkc24/Downloads/animation/img/im3.jpg');
+    }
+    75% {
+        background-image: url('C:/Users/rkc24/Downloads/animation/img/im4.jpg');
+    }
+    100% {
+        background-image: url('C:/Users/rkc24/Downloads/animation/img/im1.jpg');
+    }
+}
 
-        .typewriter {
-            font-size: 24px;
-            white-space: nowrap;
-            overflow: hidden;
-            border-right: .15em solid orange; /* Cursor effect */
-            animation: blink-caret .75s step-end infinite;
-            margin-bottom: 60px; /* Space for Skip button */
-        }
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    animation: backgroundChange 20s ease-in-out infinite; /* 5 seconds per image, 20 seconds total cycle */
+    z-index: -1; /* Ensure it is behind the text and other elements */
+}
 
-        @keyframes blink-caret {
-            from, to { border-color: transparent; }
-            50% { border-color: orange; }
-        }
+/* Container styling */
+.container {
+    text-align: center;
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    z-index: 1; /* Ensure content is above background */
+}
 
-        #buttons {
-            margin-top: 20px;
-            display: none; /* Initially hidden */
-        }
+/* Text container styling */
+.text-container {
+    margin-top: 30px;
+    color: #fff;
+}
 
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            margin: 10px;
-            cursor: pointer;
-        }
+#welcome-text {
+    font-size: 3rem; /* Adjust font size */
+    font-weight: bold; /* Make the text bold */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+}
 
-        #skip-button {
-            padding: 10px 20px;
-            font-size: 16px;
-            margin: 10px;
-            cursor: pointer;
-            background-color: #e0e0e0;
-            border: none;
-            border-radius: 5px;
-            color: #333;
-            position: absolute;
-            bottom: 20px; /* Position the Skip button just below the animation */
-            left: 50%;
-            transform: translateX(-50%);
-            display: none; /* Initially hidden */
-        }
-    </style>
+h3 {
+    font-size: 1.5rem; /* Adjust font size */
+    font-weight: normal; /* Normal font weight */
+    margin: 10px 0;
+}
+
+/* Button options styling */
+.options {
+    margin-top: 30px;
+}
+
+.options a {
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(45deg, #007bff, #00c6ff);
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    margin: 0 10px;
+    transition: background 0.3s, color 0.3s, transform 0.3s;
+    display: inline-block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effect for buttons */
+.options a:hover {
+    background: linear-gradient(45deg, #0056b3, #0099ff);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+</style>
 </head>
 <body>
     <div class="container">
-        <div id="welcome-message" class="typewriter"></div>
-        <a id="skip-button" href="skip.html">Skip</a>
-        <div id="buttons">
-            <button onclick="navigate('Rosan Portfolio')">Rosan Portfolio</button>
-            <button onclick="navigate('Rx | E-Sport')">Rx | E-Sport</button>
+        <div class="text-container">
+            <h1 id="welcome-text">Welcome to my Website</h1>
+	    <h3>For About Me Please Choose Option Rx Rosan</h3>
+	    <h3>For E-Sport Please Choose Option Rx |E-Sport</h3>
+
+
+        </div>
+        <div class="options">
+            <a href="RosanWEB.html">Rx Rosan</a>
+            <a href="RosanESP.html">Rx |E-Sport</a>
         </div>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const messages = [
-                "Hello I Am Rosan Khattri Chettri",
-                "Welcome To My Website",
-                "For About Me",
-                "Please Choose Option are ..",
-                "Rosan Portfolio",
-                "And For E-Sports",
-                "Choose Option are...",
-                "Rx | E Sport"
-            ];
-            
-            const welcomeMessage = document.getElementById('welcome-message');
-            const buttons = document.getElementById('buttons');
-            const skipButton = document.getElementById('skip-button');
-
-            let currentMessageIndex = 0;
-            let currentCharIndex = 0;
-            const typingSpeed = 50; // Speed of typing effect
-            const erasingSpeed = 25; // Speed of erasing effect
-            const pauseBetweenMessages = 1000; // Pause between messages
-            const pauseBetweenEraseAndNext = 500; // Pause between erase and typing next message
-
-            function typeMessage() {
-                if (currentCharIndex < messages[currentMessageIndex].length) {
-                    if (messages[currentMessageIndex].charAt(currentCharIndex) === '\n') {
-                        welcomeMessage.innerHTML += '<br>'; // Insert line break for new line
-                    } else {
-                        welcomeMessage.innerHTML += messages[currentMessageIndex].charAt(currentCharIndex);
-                    }
-                    currentCharIndex++;
-                    setTimeout(typeMessage, typingSpeed);
-                } else {
-                    setTimeout(eraseMessage, pauseBetweenMessages);
-                }
-            }
-
-            function eraseMessage() {
-                if (currentCharIndex > 0) {
-                    welcomeMessage.innerHTML = welcomeMessage.innerHTML.slice(0, -1);
-                    currentCharIndex--;
-                    setTimeout(eraseMessage, erasingSpeed);
-                } else {
-                    currentMessageIndex++;
-                    if (currentMessageIndex < messages.length) {
-                        if (currentMessageIndex === 1) {
-                            // Show the Skip button when "Welcome To My Website" starts typing
-                            skipButton.style.display = 'inline-block'; // Show Skip button
-                        }
-                        setTimeout(typeMessage, pauseBetweenEraseAndNext);
-                    } else {
-                        // Hide Skip button after all messages are typed and erased
-                        setTimeout(() => {
-                            buttons.style.display = 'block'; // Show buttons
-                            skipButton.style.display = 'none'; // Hide Skip button
-                        }, pauseBetweenEraseAndNext);
-                    }
-                }
-            }
-
-            typeMessage();
-        });
-
-        function navigate(option) {
-            if (option === 'Rosan Portfolio') {
-                window.location.href = 'RosanWEB.html';
-            } else if (option === 'Rx | E-Sport') {
-                window.location.href = 'RosanESP.html';
-            }
-        }
-    </script>
-</body>
+    </body>
 </html>
