@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Protected Website</title>
+    <link rel="stylesheet" href="assets/modify/styles.css">
+</head>
+<body>
+    <div id="passwordSection">
+        <h2>Enter Password to Open the Website</h2>
+        <input type="password" id="passwordInput" placeholder="Enter Password" />
+        <button onclick="checkPassword()">Submit</button>
+        <p id="errorMessage"></p>
+    </div>
+
+    <div id="welcomePopup" class="hidden">
+      <p>Password Sucessfull</p>
+    </div>
+
+    <script src="assets/modify/script.js"></script>
+</body>
+</html>
