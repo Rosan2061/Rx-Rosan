@@ -1,0 +1,182 @@
+/* General Styling */
+body {
+  font-family: 'Times new Roman', Roboto, sans-serif;
+  margin: 20px;
+  background-color: #e8eef3;
+  color: #2d2d2d;
+  line-height: 1.8;
+  animation: fadeInPage 1s ease-out;
+}
+
+h2 {
+  text-align: center;
+  font-size: 30px;
+  color: #ff6f61;
+  margin-bottom: 25px;
+  letter-spacing: 1.2px;
+  animation: slideInTop 0.8s ease-out;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+h2:hover {
+  text-shadow: 0 0 15px rgba(255, 111, 97, 0.8), 0 0 30px rgba(255, 111, 97, 0.5);
+  color: #ff4433;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 25px;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 1s ease-out;
+}
+
+th, td {
+  padding: 16px 22px;
+  text-align: left;
+  border: 1px solid #ddd;
+  transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+th {
+  background: linear-gradient(135deg, #ff6f61, #ff8a65);
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+th:hover {
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.6);
+}
+
+td {
+  background-color: #fcfcfc;
+  color: #2d2d2d;
+}
+
+td:hover {
+  text-shadow: 0 0 10px rgba(45, 45, 45, 0.8), 0 0 20px rgba(45, 45, 45, 0.6);
+  color: #333;
+}
+
+/* Glowing Row Hover Effect */
+tbody tr:hover {
+  background: linear-gradient(90deg, #ffeb3b, #fff9c4);
+  box-shadow: inset 0 0 12px rgba(255, 235, 59, 0.5);
+  animation: glowRow 0.8s ease-in-out infinite alternate;
+}
+
+/* Button Styling */
+button {
+  padding: 14px 20px;
+  margin: 8px;
+  font-size: 16px;
+  background: linear-gradient(135deg, #00bcd4, #0097a7);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease, box-shadow 0.3s ease, text-shadow 0.3s ease;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  animation: bounceIn 0.8s ease-out;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #0097a7, #007b8e);
+  transform: scale(1.08);
+  box-shadow: 0 0 15px 4px rgba(0, 150, 180, 0.7);
+  animation: glowingEffect 1.5s ease-in-out infinite alternate;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+/* Input Fields */
+input[type="text"], input[type="number"], input[type="date"] {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 15px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, input[type="date"]:focus {
+  border-color: #00bcd4;
+  box-shadow: 0 0 10px rgba(0, 188, 212, 0.8);
+}
+
+/* Glowing Effect for Font */
+p, span, a {
+  transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+p:hover, span:hover, a:hover {
+  text-shadow: 0 0 10px rgba(100, 149, 237, 0.8), 0 0 20px rgba(100, 149, 237, 0.5);
+  color: #4169e1;
+}
+
+/* Animations */
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInTop {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInModal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes glowingEffect {
+  0% {
+    box-shadow: 0 0 5px rgba(0, 150, 180, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(0, 150, 180, 1);
+  }
+}
+
+@keyframes glowRow {
+  0% {
+    box-shadow: inset 0 0 12px rgba(255, 235, 59, 0.3);
+  }
+  100% {
+    box-shadow: inset 0 0 20px rgba(255, 235, 59, 0.5);
+  }
+}
