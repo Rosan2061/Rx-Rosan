@@ -140,3 +140,59 @@ openFileBtn.addEventListener("click", () => {
 
 // Ensure initial totals are calculated on page load
 updateTotalsAndBalance();
+// Exit Button Element (assumes it exists on the page with an ID "exitBtn")
+const exitBtn = document.getElementById("exitBtn");
+
+// Handle keyboard navigation and Esc functionality
+document.addEventListener("keydown", (event) => {
+  const activeElement = document.activeElement;
+
+  // Arrow Key Navigation
+  if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(event.key) && activeElement.tagName === "INPUT") {
+    event.preventDefault(); // Prevent scrolling with arrow keys
+    navigateTable(event.key, activeElement);
+  }
+
+});
+
+// Function to navigate the table using arrow keys
+function navigateTable(key, currentInput) {
+  const td = currentInput.closest("td");
+  const currentRow = td.closest("tr");
+  const cellIndex = Array.from(currentRow.cells).indexOf(td);
+  const rowIndex = Array.from(dataTable.rows).indexOf(currentRow);
+
+  let targetInput = null;
+
+  switch (key) {
+    case "ArrowUp":
+      if (rowIndex > 0) {
+        const previousRow = dataTable.rows[rowIndex - 1];
+        targetInput = previousRow.cells[cellIndex]?.querySelector("input");
+      }
+      break;
+    case "ArrowDown":
+      if (rowIndex < dataTable.rows.length - 1) {
+        const nextRow = dataTable.rows[rowIndex + 1];
+        targetInput = nextRow.cells[cellIndex]?.querySelector("input");
+      }
+      break;
+    case "ArrowLeft":
+      if (cellIndex > 1) { // Skip the row number (first column is non-editable)
+        targetInput = currentRow.cells[cellIndex - 1]?.querySelector("input");
+      }
+      break;
+    case "ArrowRight":
+      if (cellIndex < currentRow.cells.length - 1) {
+        targetInput = currentRow.cells[cellIndex + 1]?.querySelector("input");
+      }
+      break;
+  }
+
+  // Focus the target input if available
+  if (targetInput) {
+    targetInput.focus();
+    targetInput.select(); // Optionally, select the text for editing
+  }
+}
+
