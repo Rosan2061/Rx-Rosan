@@ -153,6 +153,17 @@ document.addEventListener("keydown", (event) => {
     navigateTable(event.key, activeElement);
   }
 
+  // Ctrl + Enter to Add a New Row
+  if (event.ctrlKey && event.key === "Enter") {
+    event.preventDefault(); // Prevent default action (form submission, etc.)
+    addRow(); // Add a new row
+  }
+
+  // Ctrl + Backspace to Remove the Selected Row
+  if (event.ctrlKey && event.key === "Backspace") {
+    event.preventDefault(); // Prevent default action
+    removeSelectedRow(); // Remove the selected row
+  }
 });
 
 // Function to navigate the table using arrow keys
@@ -196,3 +207,16 @@ function navigateTable(key, currentInput) {
   }
 }
 
+// Function to remove the selected row (Ctrl + Backspace)
+function removeSelectedRow() {
+  const activeElement = document.activeElement;
+  const td = activeElement.closest("td");
+  if (td) {
+    const currentRow = td.closest("tr");
+    if (currentRow) {
+      currentRow.remove();
+      updateRowNumbers();
+      updateTotalsAndBalance();
+    }
+  }
+}
