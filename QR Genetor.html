@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="assets/img/logo/rx.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RX | QR Code Generator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+    /* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f5f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    padding: 24px;
+    max-width: 1200px;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+}
+
+.left-container, .right-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    overflow: auto;
+    transition: all 0.3s ease-in-out;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-container {
+    min-width: 350px;
+    max-width: 450px;
+    height: 100%;
+    max-height: 90%;
+}
+
+.right-container {
+    min-width: 350px;
+    height: 100%;
+    max-height: 90%;
+    overflow: hidden;
+}
+
+h2, h3 {
+    text-align: center;
+    margin-bottom: 24px;
+    color: #343a40;
+    font-weight: 600;
+}
+
+select, input, textarea {
+    width: 100%;
+    padding: 14px;
+    margin: 12px 0;
+    border-radius: 10px;
+    border: 1px solid #ced4da;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background: #f8f9fa;
+}
+
+select:focus, input:focus, textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 6px rgba(0, 123, 255, 0.4);
+    background: #ffffff;
+}
+
+button {
+    padding: 16px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: transform 0.3s, background 0.3s;
+    width: 100%;
+    max-width: 320px;
+    margin: 12px auto;
+    font-weight: 500;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #0056b3, #003f7f);
+    transform: translateY(-3px);
+}
+
+.input-details {
+    font-size: 14px;
+    color: #6c757d;
+    text-align: center;
+}
+
+#qrcode {
+    display: inline-block;
+    margin-top: 24px;
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding: 12px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        height: auto;
+        gap: 10px;
+    }
+
+    .left-container, .right-container {
+        display: flex;
+        flex: 1 1 100%;
+        max-width: none;
+        min-width: auto;
+        margin-bottom: 20px;
+        max-height: none;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    button {
+        display: block;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h2, h3 {
+        display: block;
+        font-size: 20px;
+    }
+
+    .input-details {
+        display: block;
+        font-size: 12px;
+    }
+
+    select, input, textarea {
+        display: block;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    button {
+        display: block;
+        padding: 12px;
+        font-size: 16px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-container">
+            <h2>Rosan Xettri<br>
+            QR Code Generator</h2>
+            <select id="qrType" onchange="updateInputField()">
+                <option value="text">Text</option>
+                <option value="url">URL</option>
+                <option value="phone">Phone</option>
+                
+                <option value="facebook">Facebook</option>
+                <option value="twitter">Twitter</option>
+                <option value="youtube">YouTube</option>
+               
+            </select>
+
+            <!-- Input Fields for Different QR Types -->
+            <div id="textInput" class="input-container">
+                <input type="text" id="textData" placeholder="Enter text" oninput="generateQR()">
+                <div class="input-details">Enter any text you want to encode.</div>
+            </div>
+            <div id="urlInput" class="input-container" style="display: none;">
+                <input type="url" id="urlData" placeholder="Enter URL" oninput="generateQR()">
+                <div class="input-details">Enter a website URL (e.g., http://example.com).</div>
+            </div>
+            <div id="phoneInput" class="input-container" style="display: none;">
+                <input type="tel" id="phoneData" placeholder="Enter phone number" oninput="generateQR()">
+                <div class="input-details">Enter a phone number (e.g., +1234567890).</div>
+            </div>
+           
+            <div id="facebookInput" class="input-container" style="display: none;">
+                <input type="text" id="facebookData" placeholder="Enter Facebook username" oninput="generateQR()">
+                <div class="input-details">Enter a Facebook username (e.g., user.name).</div>
+            </div>
+            <div id="twitterInput" class="input-container" style="display: none;">
+                <input type="text" id="twitterData" placeholder="Enter Twitter username" oninput="generateQR()">
+                <div class="input-details">Enter a Twitter username (e.g., @username).</div>
+            </div>
+            <div id="youtubeInput" class="input-container" style="display: none;">
+                <input type="text" id="youtubeData" placeholder="Enter YouTube channel URL" oninput="generateQR()">
+                <div class="input-details">Enter a YouTube channel URL (e.g., https://youtube.com/user/username).</div>
+            </div>
+            
+        </div>
+
+        <div class="right-container">
+            <h3>QR Code Preview</h3>
+            <div id="qrcode"></div>
+            <button id="saveBtn" onclick="saveQRCode()">Download QR Code</button>
+            <button onclick="window.location.href='index.html'">Exit To Home</button>
+           
+        </div>
+    </div>
+
+    <script>
+        function updateInputField() {
+            // Hide all input containers first
+            const inputContainers = document.querySelectorAll('.input-container');
+            inputContainers.forEach(container => container.style.display = 'none');
+
+            const type = document.getElementById("qrType").value;
+            const inputType = document.getElementById(type + "Input");
+
+            if (inputType) inputType.style.display = "block";
+            generateQR();
+        }
+
+        function generateQR() {
+            const type = document.getElementById("qrType").value;
+            let data = getDataFromInput(type);
+
+            if (data.trim() === "") return;
+
+            const content = formatQRCode(type, data);
+            document.getElementById("qrcode").innerHTML = "";
+            new QRCode(document.getElementById("qrcode"), {
+                text: content,
+                width: 200,
+                height: 200
+            });
+        }
+
+        function getDataFromInput(type) {
+            switch (type) {
+                case "text": return document.getElementById("textData").value;
+                case "url": return document.getElementById("urlData").value;
+                case "phone": return document.getElementById("phoneData").value;
+                case "sms": return document.getElementById("smsData").value;
+                case "vcard": return document.getElementById("vcardData").value;
+                case "mecard": return document.getElementById("mecardData").value;
+                case "location": return document.getElementById("locationData").value;
+                case "facebook": return document.getElementById("facebookData").value;
+                case "twitter": return document.getElementById("twitterData").value;
+                case "youtube": return document.getElementById("youtubeData").value;
+                case "wifi": return document.getElementById("wifiData").value;
+                default: return "";
+            }
+        }
+
+        function formatQRCode(type, data) {
+            switch (type) {
+                case "url": return data;
+                case "phone": return `tel:${data}`;
+                case "sms": return `sms:${data}`;
+                case "vcard": return `BEGIN:VCARD\n${data}\nEND:VCARD`;
+                case "mecard": return `MECARD:N:${data};;`;
+                case "location": return `geo:${data}`;
+                case "facebook": return `https://facebook.com/${data}`;
+                case "twitter": return `https://twitter.com/${data}`;
+                case "youtube": return `https://youtube.com/${data}`;
+                case "wifi": return `WIFI:T:WPA;S:${data};;`;
+                default: return data;
+            }
+        }
+
+        function saveQRCode() {
+            const qrCodeElement = document.getElementById("qrcode").getElementsByTagName("img")[0];
+            if (qrCodeElement) {
+                const link = document.createElement("a");
+                link.href = qrCodeElement.src;
+                link.download = "qrcode.png";
+                link.click();
+            }
+        }
+
+        // Initialize with default settings
+        window.onload = updateInputField;
+    </script>
+</body>
+</html>

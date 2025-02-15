@@ -1,0 +1,180 @@
+/* General styles for the invoice */
+h1 {
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  font-size: 24px; /* Adjust size as needed */
+  font-weight: bold;
+  margin: 0; /* Remove default margin */
+  padding: 10px 0; /* Add padding if needed */
+  color: rgb(158, 4, 4);
+}
+h2 {
+  font-family:'Lucida Sans';
+  color: rgb(32, 8, 117);
+}
+p{
+ font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+ color: rgb(17, 112, 4);
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 10px;
+  background-color:transparent;
+}
+
+.invoice-container {
+  max-width: 1000px; /* Maximum width for large screens */
+  width: 100%; /* Full width on smaller screens */
+  margin: 0 auto; /* Center the container horizontally */
+  background: transparent;
+  padding: 15px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  box-sizing: border-box; /* Ensures padding does not affect the width */
+}
+
+
+/* Table Styles */
+.invoice-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+
+.invoice-table th,
+.invoice-table td {
+  border: 1px solid transparent;
+  padding: 11.1px;
+  text-align: center;
+  font-size: 14px;
+  padding: 2px;
+}
+
+.invoice-table th {
+  background-color:transparent;
+}
+
+/* Description Column Styles */
+.description-container {
+  width: 30%; /* Make the description column wider */
+}
+
+.description-input {
+  width: 100%;
+  min-height: 1px;
+  resize: none;
+  font-size: 12px;
+  padding: 1px;
+}
+
+/* Button Styles */
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #0c5802;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+  /* For tablet and medium-sized screens */
+  .invoice-container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .invoice-table th, .invoice-table td {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .description-container {
+    width: 35%; /* Slightly reduce description column width */
+  }
+
+  button {
+    width: 100%;
+    padding: 8px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* For mobile and small screens */
+  .invoice-container {
+    width: 90%;
+    padding: 10px;
+  }
+
+  .invoice-table th, .invoice-table td {
+    font-size: 10px;
+    padding: 6px;
+  }
+
+  .description-container {
+    width: 30%; /* Reduce description column width */
+  }
+
+  button {
+    width: 100%;
+    padding: 8px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* For very small screens like mobile phones */
+  .invoice-container {
+    width: 100%;
+    padding: 5px;
+  }
+
+  .invoice-table th, .invoice-table td {
+    font-size: 9px; /* Adjust font size to fit */
+    padding: 5px;
+  }
+
+  .description-container {
+    width: 100%; /* Full width on very small screens */
+  }
+
+  button {
+    width: 100%;
+    padding: 6px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .invoice-container {
+    box-shadow: none;
+    border: none;
+    width: 100%;
+    padding: 10px;
+  }
+
+  /* Hide action columns and button for printing */
+  td:last-child, th:last-child, button {
+    display: none !important;
+  }
+
+  /* Adjust print margins for any paper size */
+  @page {
+    size: auto;
+     }
+}

@@ -1,0 +1,73 @@
+/* Enhanced Popup Window Styling */
+#popup {
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7); /* Slightly more transparent for better user comfort */
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease, pointer-events 0.4s ease;
+}
+
+#popup.show {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.popup-content {
+    background: #f9f9f9; /* Softer off-white background for reduced eye strain */
+    width: 90%;
+    max-width: 600px;
+    padding: 30px;
+    border-radius: 12px; /* Smoother, more modern corners */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Deeper shadow for a subtle 3D effect */
+    position: relative;
+    text-align: center;
+    font-family: 'Arial', sans-serif; /* Clean, readable font */
+    overflow-y: auto; /* Enables scrolling if content overflows */
+    max-height: 90vh; /* Ensures popup stays within the viewport */
+}
+
+.popup-content img {
+    width: 100%;
+    border-radius: 10px; /* Uniformly rounded edges */
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle image shadow for better focus */
+}
+
+.popup-content h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #333; /* Darker font color for good contrast */
+}
+
+.popup-content p {
+    font-size: 16px;
+    color: #555; /* Softer font color for secondary text */
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+.btn-close {
+    background: #e63946; /* Slightly brighter red */
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 50%; /* Circular button for a sleeker look */
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    transition: background 0.3s ease;
+}
+
+.btn-close:hover {
+    background: #d62828; /* Slightly darker red on hover */
+}
