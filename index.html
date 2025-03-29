@@ -517,24 +517,42 @@ $(document).ready(function(){
      <!-- Popup Window -->
 <div id="popup">
     <div class="popup-content">
-        <button class="btn-close" id="close-popup">&times;</button>
+        <button class="btn-close" id="close-popup" aria-label="Close popup">&times;</button>
         <div class="popup-carousel" id="popup-carousel">
-            <!-- Content -->
-            <div>
-                <h2> Wellcome </h2>
+            <!-- Carousel Items -->
+            <div class="carousel-item active">
+                <h2>Welcome</h2>
                 <p>"Hi, I'm Rosan Xettri, a passionate web designer dedicated to creating stunning and user-friendly websites. Let's build something amazing!"</p>
-                <h2> Rosan Khattri Chettri </h2>
-                <img src="assets/img/R&T/R M.jpg" alt="News Image">
+                <img src="assets/img/R&T/R M.jpg" alt="Rosan Xettri" loading="lazy">
+            </div>
+            <div class="carousel-item">
+                <h2>Prasamsha Khanal</h2>
                 <p>"Meet my web design partner, Prasamsha Khanal! 🚀 A creative mind with a passion for stunning, user-friendly designs. Excited to build amazing projects together!"</p>
-                <h2> Prasamsha Khanal  </h2>
-                <img src="assets/img/R&T/P M.jpg" alt="News Image">
+                <img src="assets/img/R&T/P M.jpg" alt="Prasamsha Khanal" loading="lazy">
+            </div>
+            <div class="carousel-item">
                 <h2>New Content</h2>
                 <p>We have a lot of exciting updates! Stay tuned for more info about what's new!</p>
             </div>
+            <!--<div class="carousel-item">
+                <h2>New Content</h2>
+                <p>We have a lot of exciting updates! Stay tuned for more info about what's new!</p>
+            </div>
+            <div class="carousel-item">
+                <h2>New Content</h2>
+                <p>We have a lot of exciting updates! Stay tuned for more info about what's new!</p>
+            </div>-->
+            
+            <!-- Carousel Controls -->
+            <div class="carousel-controls">
+                <button class="carousel-btn prev" aria-label="Previous slide">&#10094;</button>
+                <div class="carousel-indicators"></div>
+                <button class="carousel-btn next" aria-label="Next slide">&#10095;</button>
+            </div>
         </div>
     </div>
+</div>
 <!-- Popup Window End -->
-
     <!-- Js Plugins -->
     <script src="assets/js/js1.js"></script>
     <script src="assets/js/js5.js"></script>
