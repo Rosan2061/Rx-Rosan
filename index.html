@@ -359,8 +359,8 @@
 <style>
 .blog__item {
     position: relative;
-    background: rgb(19, 6, 95); /* Default purple background */
-    padding: 20px;
+    background: rgb(19, 6, 95);
+    padding: 24px;
     border-radius: 20px;
     min-height: 250px;
     display: flex;
@@ -368,50 +368,152 @@
     justify-content: flex-end;
     cursor: pointer;
     overflow: hidden;
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
+    will-change: transform, box-shadow;
+    backface-visibility: hidden;
 }
 
-/* When hovering or clicking, remove the purple and show the image */
+/* Image background reveal */
+.blog__item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('your-image.jpg'); /* Replace with dynamic image */
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transform: scale(1.05);
+    filter: brightness(1.1) blur(2px);
+    transition: opacity 0.35s ease-in-out, transform 0.35s ease-in-out, filter 0.35s ease-in-out;
+    z-index: 1;
+}
+
+/* Dark gradient overlay for better text visibility */
+.blog__item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+    opacity: 0;
+    transition: opacity 0.35s ease-in-out;
+    z-index: 1;
+}
+
+/* Hover effect */
 .blog__item:hover {
-    background-color: rgb(19, 6, 95);;
+    transform: scale(1.02);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
 }
 
-/* Ensure text remains readable and stays above the background */
-.blog__item h4, .blog__item ul, .blog__item p, .blog__item a {
+.blog__item:hover::before,
+.blog__item:hover::after {
+    opacity: 1;
+    transform: scale(1);
+    filter: brightness(1) blur(0);
+}
+
+/* Content stays readable above background */
+.blog__item h4,
+.blog__item ul,
+.blog__item p,
+.blog__item a {
     position: relative;
     z-index: 2;
+    color: #fff;
+    transition: color 0.2s ease;
 }
+
+/* Optional text color lift */
+.blog__item:hover h4,
+.blog__item:hover p {
+    color: #e2e8f0;
+}
+
 </style>
 
 <script>
-$(document).ready(function(){
-    $(".latest__slider").owlCarousel({
-        loop: true,
-        margin: 20,
-        nav: true,
-        dots: false,
-        autoplay: true,
-        autoplayTimeout: 3000,
-        responsive: {
-            0: { items: 1 },
-            600: { items: 2 },
-            1000: { items: 3 }
+    $(document).ready(function () {
+        // Initialize Owl Carousel
+        $(".latest__slider").owlCarousel({
+            loop: true,
+            margin: 20,
+            nav: true,
+            dots: false,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            responsive: {
+                0: { items: 1 },
+                600: { items: 2 },
+                1000: { items: 3 }
+            }
+        });
+    
+        // Style tweaks for smooth visual effects
+        $(".blog__item").css({
+            "transition": "all 0.4s ease",
+            "cursor": "pointer"
+        });
+    
+        // Store the active card
+        let activeCard = null;
+    
+        // On hover or click
+        $(".blog__item").on("mouseenter click", function (e) {
+            e.stopPropagation();
+    
+            const $this = $(this);
+            const bgImage = $this.data("bg");
+    
+            // If this card is already active, deactivate it on click
+            if (activeCard && activeCard.is($this)) {
+                resetCard($this);
+                activeCard = null;
+                return;
+            }
+    
+            // Deactivate previously active card
+            if (activeCard) resetCard(activeCard);
+    
+            // Activate this card
+            if (bgImage) {
+                $this.css({
+                    "background-image": `url('${bgImage}')`,
+                    "background-size": "cover",
+                    "background-position": "center",
+                    "box-shadow": "0 0 15px rgba(255, 255, 255, 0.6)",
+                    "border-radius": "10px"
+                });
+                activeCard = $this;
+            }
+        });
+    
+        // On mouse leave, reset background (desktop UX)
+        $(".blog__item").on("mouseleave", function () {
+            if (!$(this).is(activeCard)) {
+                resetCard($(this));
+            }
+        });
+    
+        // Click outside any card to reset all
+        $(document).on("click", function () {
+            if (activeCard) {
+                resetCard(activeCard);
+                activeCard = null;
+            }
+        });
+    
+        // Reset card styles
+        function resetCard($card) {
+            $card.css({
+                "background-image": "",
+                "background": "rgb(19, 6, 95)",
+                "box-shadow": "none"
+            });
         }
     });
-
-    // Handle hover or click on the card to show background image
-    $(".blog__item").on("mouseenter click", function() {
-        var bgImage = $(this).data("bg");
-        $(this).css("background-image", "url('" + bgImage + "')");
-    });
-
-    // Clicking outside the card should revert to purple background
-    $(document).click(function(event) {
-        if (!$(event.target).closest(".blog__item").length) {
-            $(".blog__item").css("background-image", "").css("background", "rgb(19, 6, 95)"); // Revert to purple background
-        }
-    });
-});
-</script>
+    </script>
 
 <!-- Latest Blog Section End -->
 
