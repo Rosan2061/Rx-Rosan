@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EPS-TOPIK - EXAMINATION</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="files/css/style.css">
+</head>
+<body>
+  <div class="main-container">
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+      <div class="user-profile">
+        <div class="avatar">RX</div>
+        <div class="user-info">
+          <span class="username">Rosan Xettri</span>
+          <span class="test-info">EPS-TOPIK Test</span>
+        </div>
+      </div>
+      
+      <div class="time-progress">
+        <div class="time-remaining">
+          <i class="fas fa-clock"></i>
+          <span id="time">20:00</span>
+          <span id="time-warning" class="time-warning" style="display:none;">Low time!</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+      </div>
+
+      <div class="question-categories">
+        <div class="category">
+          <h2><i class="fas fa-graduation-cap"></i> Learning (1-20)</h2>
+          <div class="question-nav" id="learning-questions"></div>
+        </div>
+        <div class="category">
+          <h2><i class="fas fa-book-reader"></i> Reading (21-40)</h2>
+          <div class="question-nav" id="reading-questions"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="content">
+      <header class="test-header">
+        <div class="test-title">EPS-TOPIK Practice Test</div>
+        <div class="test-controls">
+          <button id="fullscreenBtn" class="control-btn" aria-label="Toggle fullscreen">
+            <i class="fas fa-expand"></i>
+          </button>
+          <button id="settingsBtn" class="control-btn" aria-label="Test settings">
+            <i class="fas fa-cog"></i>
+          </button>
+        </div>
+      </header>
+
+      <main class="question-area">
+        <div class="question-meta">
+          <span id="question-number">Question 1</span>
+          <span class="question-status" id="question-status"></span>
+          <span class="time-spent" id="time-spent">Time spent: 0s</span>
+        </div>
+        
+        <div class="question-content">
+          <div id="question-text"></div>
+          <ul id="options" role="listbox"></ul>
+          <div class="explanation" id="explanation" style="display:none;"></div>
+        </div>
+
+        <div class="question-actions">
+          <button id="prevBtn" class="nav-btn" aria-label="Previous question">
+            <i class="fas fa-arrow-left"></i> Previous
+          </button>
+          <button id="markReviewBtn" class="nav-btn secondary" aria-label="Mark for review">
+            <i class="far fa-flag"></i> Mark for Review
+          </button>
+          <button id="nextBtn" class="nav-btn" aria-label="Next question">
+            Next <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+      </main>
+
+      <footer class="test-footer">
+        <button id="completeBtn" class="submit-btn" aria-label="Submit test">
+          <i class="fas fa-paper-plane"></i> Submit Test
+        </button>
+        <div class="quick-nav">
+          <button class="quick-nav-btn" data-action="first" aria-label="First question">
+            <i class="fas fa-step-backward"></i>
+          </button>
+          <button class="quick-nav-btn" data-action="prev-unanswered" aria-label="Previous unanswered">
+            <i class="fas fa-undo"></i> Prev Unanswered
+          </button>
+          <button class="quick-nav-btn" data-action="next-unanswered" aria-label="Next unanswered">
+            <i class="fas fa-redo"></i> Next Unanswered
+          </button>
+          <button class="quick-nav-btn" data-action="last" aria-label="Last question">
+            <i class="fas fa-step-forward"></i>
+          </button>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Modal Windows -->
+    <div class="modal" id="settingsModal">
+      <div class="modal-content">
+        <h3>Test Settings</h3>
+        <div class="setting-option">
+          <label>
+            <input type="checkbox" id="autoNext" checked> Auto move to next question
+          </label>
+        </div>
+        <div class="setting-option">
+          <label>
+            <input type="checkbox" id="highlightAnswers"> Highlight correct answers
+          </label>
+        </div>
+        <div class="setting-option">
+          <label>
+            <input type="checkbox" id="showExplanations"> Show explanations
+          </label>
+        </div>
+        <div class="modal-actions">
+          <button class="modal-btn confirm">Save Settings</button>
+          <button class="modal-btn cancel">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="confirmModal">
+      <div class="modal-content">
+        <h3>Test Results</h3>
+        <p id="confirmMessage">Are you sure you want to submit your test?</p>
+        <div class="stats">
+          <div>Answered: <span id="answeredCount">0</span>/40</div>
+          <div>Marked: <span id="markedCount">0</span></div>
+          <div>Correct: <span id="scoreCount">0</span>/40</div>
+          <div>Score: <span id="percentage">0</span>%</div>
+        </div>
+        <div class="modal-actions">
+          <button class="modal-btn confirm">Submit</button>
+          <button class="modal-btn reset" id="resetBtn">Reset Test</button>
+          <button class="modal-btn cancel">Continue Test</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="files/js/script.js"></script>
+  <script src="files/js/questions.js"></script>
+</body>
+</html>
