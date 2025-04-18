@@ -258,7 +258,7 @@ const questions = [
     explanation: "Review not Aviable."
   },
   {
-    question: " 사진기 입니다<br>",
+    question: " 이 사진은 뭐의 입니까?<br>",
     options: { a: "에어컨 입니다.", b: "사진 입니다.", c: "양돈 입니다.", d: "사진기 입니다" },
     answer: "d",
     explanation: "Review not Aviable.",
