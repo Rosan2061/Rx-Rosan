@@ -1,0 +1,340 @@
+/* Base Dark Theme Styles */
+:root {
+    --bg-primary: #121212;
+    --bg-secondary: #1e1e1e;
+    --bg-tertiary: #252525;
+    --text-primary: #e0e0e0;
+    --text-secondary: #b0b0b0;
+    --accent-color: #bb86fc;
+    --accent-hover: #9a67ea;
+    --danger-color: #cf6679;
+    --border-color: #333;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    padding-top: 56px; /* To account for fixed navbar */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+/* Login Page Styles */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-tertiary) 100%);
+}
+
+.login-box {
+    background-color: var(--bg-secondary);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 420px;
+    border: 1px solid var(--border-color);
+    transform: translateY(-20px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-box:hover {
+    transform: translateY(-25px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+}
+
+.login-box h1 {
+    color: var(--accent-color);
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+}
+
+/* Form Elements */
+.dark-input {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 12px 15px;
+    transition: all 0.3s ease;
+}
+
+.dark-input:focus {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.25rem rgba(187, 134, 252, 0.25);
+}
+
+.form-label {
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+}
+
+/* Name Field Specific Styles */
+#name {
+    margin-bottom: 1.5rem;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: var(--bg-secondary) !important;
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.8rem 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-brand {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: var(--accent-color) !important;
+    font-size: 1.3rem;
+}
+
+.nav-link {
+    color: var(--text-secondary) !important;
+    padding: 0.5rem 1rem !important;
+    margin: 0 0.2rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--text-primary) !important;
+    background-color: rgba(187, 134, 252, 0.1);
+}
+
+.nav-link.active {
+    color: var(--text-primary) !important;
+    background-color: rgba(187, 134, 252, 0.2);
+    font-weight: 500;
+}
+
+.navbar-text {
+    color: var(--text-secondary);
+    padding-right: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-text::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+/* Welcome Message Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#loggedInUser {
+    display: inline-block;
+    animation: fadeIn 0.5s ease-out;
+    font-weight: 500;
+    color: var(--accent-color);
+}
+
+/* Logout Button */
+#logoutBtn {
+    border-radius: 6px;
+    padding: 6px 12px;
+    transition: all 0.3s ease;
+}
+
+#logoutBtn:hover {
+    background-color: var(--danger-color);
+    border-color: var(--danger-color);
+}
+
+/* Question Cards */
+.question-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.8rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.question-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border-color: var(--accent-color);
+}
+
+.question-card h3 {
+    color: var(--accent-color);
+    margin-bottom: 1.2rem;
+    font-weight: 500;
+    font-size: 1.4rem;
+}
+
+.question-card p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--accent-color);
+    opacity: 0.8;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+    border-color: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+.btn-outline-primary {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--accent-color);
+    color: var(--text-primary);
+}
+
+/* Main Content */
+main.container {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+}
+
+main h2 {
+    color: var(--text-primary);
+    font-weight: 400;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+main h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+    border-radius: 3px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--bg-tertiary);
+    border-top: 1px solid var(--border-color);
+    padding: 3rem 0 2rem;
+    margin-top: 3rem;
+}
+
+footer h5 {
+    color: var(--accent-color);
+    margin-bottom: 1.2rem;
+    font-weight: 500;
+}
+
+footer a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+footer .text-center {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Error Message */
+.alert-danger {
+    background-color: var(--danger-color);
+    border-color: var(--danger-color);
+    color: var(--text-primary);
+    border-radius: 6px;
+    padding: 0.8rem 1rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .login-box {
+        padding: 2rem 1.5rem;
+        margin: 0 1rem;
+    }
+    
+    .navbar-brand {
+        font-size: 1.1rem;
+    }
+    
+    .question-card {
+        padding: 1.5rem;
+    }
+    
+    .navbar-text {
+        padding-right: 0.5rem;
+    }
+    
+    #logoutBtn {
+        margin-left: 0.5rem !important;
+        padding: 5px 10px;
+    }
+}
+/* Add to your existing CSS */
+.question-card .btn {
+    min-width: 120px;
+}
+
+.modal-content.dark-theme {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.modal-header {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.modal-footer {
+    border-top: 1px solid var(--border-color);
+}
