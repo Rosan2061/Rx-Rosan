@@ -1174,15 +1174,7 @@ backToTopButton.addEventListener('click', () => {
 
 // Update current year in footer
 document.getElementById('current-year').textContent = new Date().getFullYear();
-
-// Social media links 
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    const platform = link.querySelector('i').className.split(' ')[1].replace('fa-', '');
-    showNotification(`${platform.charAt(0).toUpperCase() + platform.slice(1)} link will be added soon!`, 'info');
-  });
-});
-
+  
 // Location button
 document.getElementById('location-btn').addEventListener('click', function(e) {
   e.preventDefault();
