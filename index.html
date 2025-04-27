@@ -1175,8 +1175,7 @@ backToTopButton.addEventListener('click', () => {
 // Update current year in footer
 document.getElementById('current-year').textContent = new Date().getFullYear();
 
-// Social media links (placeholder - replace with actual links)
-document.querySelectorAll('https://www.facebook.com/RosanXettri.2004').forEach(link => {
+// Social media links 
   link.addEventListener('click', (e) => {
     e.preventDefault();
     const platform = link.querySelector('i').className.split(' ')[1].replace('fa-', '');
