@@ -4,7 +4,7 @@ const questions = [
     options: { a: "자동차 입니다.", b: "전화기 입니다.", c: "냉장고 입니다.", d: "세탁기 입니다." },
     answer: "c",
     explanation: "In Korea, fridge is called 냉장고.",
-    image: "rxasset/img/img/img1.jpg"
+    image: "rxasset/QSM2/img/img1.jpg"
   },
   {
     question: "2<br>  당신의 이름은 뭐 입니까?",
@@ -17,21 +17,21 @@ const questions = [
     options: { a: "자기야, 사랑해. 너랑 결혼하고 싶어요.", b: "저는 학교 가고 싶어요", c: "밥을 먹고 싶어요", d: "영화를 보고 싶어요" },
     answer: "a",
     explanation: "Romantic sentence – matches the audio.",
-    audio: "rxasset/img/audio/audio1.mp3"
+    audio: "rxasset/QSM2/audio/audio1.mp3"
   },
   {
     question: "4<br>  이 사진은 뭐의 입니까?",
     options: { a: "돈 입니다.", b: "원 입나다.", c: "물소 입니다.", d: "소 입니다." },
     answer: "a",
     explanation: "Review not Aviable.",
-    image: "rxasset/img/img/img2.jpg"
+    image: "rxasset/QSM2/img/img2.jpg"
   },
   {
     question: "5<br> 이 사진은 뭐의 입니까?",
     options: { a: "짐대 입니다.", b: "텔레비전 입니다.", c: "노트북 입니다.", d: "컴프터 입니다" },
     answer: "d",
     explanation: "Review not Aviable.",
-    image: "rxasset/img/img/img14.jpg"
+    image: "rxasset/QSM2/img/img14.jpg"
   },
   {
     question: " 6<br> 저는 어제 시장에 가서 두 ...... 바지를 샀습니다.",
@@ -44,28 +44,28 @@ const questions = [
     options: { a: "이 사진은 학교의 사진입니다.", b: "이 사진은 병원의 사진입니다.", c: "이 사진은 공원의 사진입니다.", d: "이 사진은 경찰서의 사진입니다." },
     answer: "a",
     explanation: "Review not Aviable.",
-    image: "rxasset/img/img/img21.jpg"
+    image: "rxasset/QSM2/img/img21.jpg"
   },
   {
     question: "8<br>  이 소리는 무엇입니까?",
     options: { a: "전화벨", b: "문 여는 소리", c: "기차", d: "개 짖는 소리" },
     answer: "a",
     explanation: "Audio is a phone ringing.",
-    audio: "rxasset/img/audio/audio2.wav"
+    audio: "rxasset/QSM2/audio/audio2.mp3"
   },
   {
     question: "9<br>   이 사진은 뭐의 입니까?",
     options: { a: "버스 입니다.", b: "기차 입니다.", c: "택시 입니다.", d: "차 입니다." },
     answer: "c",
     explanation: "Review not Aviable.",
-    image: "rxasset/img/img/img15.jpg"
+    image: "rxasset/QSM2/img/img15.jpg"
   },
   {
     question: "10<br>   이 사진은 뭐의 입니까?",
     options: { a: "소 입니다.", b: "모자 입니다", c: "바지 입니다.", d: "사자 입니다." },
     answer: "b",
     explanation: "Review not Aviable.",
-    image: "rxasset/img/img/img3.jpg"
+    image: "rxasset/QSM2/img/img3.jpg"
   },
   {
     question: "11<br>  선픙기가 두 ....... 있습니다.",
@@ -84,7 +84,7 @@ const questions = [
     options: { a: "모자 입니다.", b: "유니픔 입니다.", c: "바지 입니다.", d: "가방 입니다." },
     answer: "c",
     explanation: "Review not Aviable.",
-    image: "rxasset/img/img/img4.jpg"
+    image: "rxasset/QSM2/img/img4.jpg"
   },
   {
     question: "14<br>  가：내일 ....이/가 어때요?<br>나：비가 오고 바람이 많이 불 거예요.",
@@ -103,7 +103,7 @@ const questions = [
     options: { a: "공항 입니다.", b: "자전거 입니다.", c: "배 입니다.", d: "비행기 입니다." },
     answer: "d",
     explanation: "Review not Aviable.",
-    image: "rxasset/img/img/img5.jpg"
+    image: "rxasset/QSM2/img/img5.jpg"
   },
   {
     question: "17<br>  만오천백오십일",
@@ -122,7 +122,7 @@ const questions = [
     options: { a: "선픙기 입니다.", b: "자동차 입니다.", c: "버스 입니다.", d: "차 입니다." },
     answer: "a",
     explanation: "Review not Aviable.",
-    image: "rxasset/img/img/img6.jpg"
+    image: "rxasset/QSM2/img/img6.jpg"
   },
   {
     question: "20<br>  여기에서 제 집까지 ..... 입니다.",
