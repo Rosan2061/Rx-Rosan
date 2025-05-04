@@ -20,6 +20,13 @@ const questions = [
         category: "PDF",
         fileLink: "rxasset/file/한국 Basic RX' PASS = Rosan2061.pdf"
     },
+    {
+        id: 3,
+        title: "Question Model 2",
+        description: "This is the QUESTION MODEL 2 of korean language exam",
+        category: "Korean Language Exam QUESTION SET MODEL - 1",
+        fileLink: "QSM2.html"
+    },
 ];
 
 // DOM elements
