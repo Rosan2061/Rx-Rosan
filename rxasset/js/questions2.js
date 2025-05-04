@@ -182,7 +182,7 @@ const questions = [
   {
     question: "28<br> 듣고 가장 알맞은 것을 고르십시오.",
     options: { a: "내일 갑니다.", b: "당신이 오늘 뭣은 먹습니까 ?", c: "식당에 먹습나다.", d: "닥 고기를 먹습니다." },
-    answer: " b",
+    answer: "b",
     explanation: "Review not Aviable.",
     audio: "rxasset/QSM2/audio/audio8.mp3"
   },
@@ -209,8 +209,8 @@ const questions = [
   },
   {
     question: "32<br> 듣고 가장 알맞은 것을 고르십시오.",
-    options: { a: "집에 가 .", b: "저는 뭣은 해요 ?", c: "빨리 하라.", d: "뭐 입니까 ?" },
-    answer: " b",
+    options: { a: "집에 가.", b: "저는 뭣은 해요 ?", c: "빨리 하라.", d: "뭐 입니까 ?" },
+    answer: "b",
     explanation: "Review not Aviable.",
     audio: "rxasset/QSM2/audio/audio12.mp3"
   },
