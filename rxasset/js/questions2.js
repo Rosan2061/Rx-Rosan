@@ -1,134 +1,123 @@
 const questions = [
   {
-    question: "1<br> 이 사진 뭐의 입니까 ?",
-    options: { a: "자동차 입니다.", b: "전화기 입니다.", c: "냉장고 입니다.", d: "세탁기 입니다." },
-    answer: "c",
-    explanation: "In Korea, fridge is called 냉장고.",
-    image: "rxasset/QSM2/img/img1.jpg"
-  },
-  {
-    question: "2<br>  당신의 이름은 뭐 입니까?",
-    options: { a: "저는 학생입니다.", b: "깨 시 로선 입니다.", c: "집에 갑니다.", d: "안녕하세요." },
-    answer: "b",
-    explanation: "Question asks 'What is your name?'"
-  },
-  {
-    question: "3<br> 듣고 가장 알맞은 것을 고르십시오.",
-    options: { a: "자기야, 사랑해. 너랑 결혼하고 싶어요.", b: "저는 학교 가고 싶어요", c: "밥을 먹고 싶어요", d: "영화를 보고 싶어요" },
-    answer: "a",
-    explanation: "Romantic sentence – matches the audio.",
-    audio: "rxasset/QSM2/audio/audio1.mp3"
-  },
-  {
-    question: "4<br>  이 사진은 뭐의 입니까?",
-    options: { a: "돈 입니다.", b: "원 입나다.", c: "물소 입니다.", d: "소 입니다." },
-    answer: "a",
-    explanation: "Review not Aviable.",
-    image: "rxasset/QSM2/img/img2.jpg"
-  },
-  {
-    question: "5<br> 이 사진은 뭐의 입니까?",
-    options: { a: "짐대 입니다.", b: "텔레비전 입니다.", c: "노트북 입니다.", d: "컴프터 입니다" },
-    answer: "d",
-    explanation: "Review not Aviable.",
-    image: "rxasset/QSM2/img/img14.jpg"
-  },
-  {
-    question: " 6<br> 저는 어제 시장에 가서 두 ...... 바지를 샀습니다.",
-    options: { a: "개", b: "벌", c: "송이", d: "켤레" },
+    question: " 1<br> 가 :괜찮아요? 많이 아파 보여요.<br>나 :_______에 걸렸어요. 열도 나고 목도 아파요.",
+    options: { a: "약", b: "감기", c: "병원", d: "기침" },
     answer: "b",
     explanation: "Review Not aviable."
   },
   {
-    question: "7<br>  이 사진은 뭐의 입니까?",
-    options: { a: "이 사진은 학교의 사진입니다.", b: "이 사진은 병원의 사진입니다.", c: "이 사진은 공원의 사진입니다.", d: "이 사진은 경찰서의 사진입니다." },
+    question: " 2<br>저는 구청에서 한국말을 배웠어요.  1월부터 6월까지 6 _____ 동안 배웠어요. ",
+    options: { a: "개월", b: "시간", c: "년", d: "월" },
     answer: "a",
-    explanation: "Review not Aviable.",
-    image: "rxasset/QSM2/img/img21.jpg"
+    explanation: "Review Not aviable."
   },
   {
-    question: "8<br>  이 소리는 무엇입니까?",
-    options: { a: "전화벨", b: "문 여는 소리", c: "기차", d: "개 짖는 소리" },
-    answer: "a",
-    explanation: "Audio is a phone ringing.",
-    audio: "rxasset/QSM2/audio/audio2.mp3"
-  },
-  {
-    question: "9<br>   이 사진은 뭐의 입니까?",
-    options: { a: "버스 입니다.", b: "기차 입니다.", c: "택시 입니다.", d: "차 입니다." },
-    answer: "c",
-    explanation: "Review not Aviable.",
-    image: "rxasset/QSM2/img/img15.jpg"
-  },
-  {
-    question: "10<br>   이 사진은 뭐의 입니까?",
-    options: { a: "소 입니다.", b: "모자 입니다", c: "바지 입니다.", d: "사자 입니다." },
-    answer: "b",
-    explanation: "Review not Aviable.",
-    image: "rxasset/QSM2/img/img3.jpg"
-  },
-  {
-    question: "11<br>  선픙기가 두 ....... 있습니다.",
-    options: { a: "대", b: "개", c: "채", d: "켤레" },
-    answer: "a",
-    explanation: "Review not Aviable."
-  },
-  {
-    question: "12<br>  저는 어제 시장에 갔어요, ...... 에서 과일을 샀어요.",
-    options: { a: "여기", b: "커기", c: "저기", d: "어디" },
-    answer: "a",
-    explanation: "Review not Aviable."
-  },
-  {
-    question: "13<br>  이 사진은 뭐의 입니까?",
-    options: { a: "모자 입니다.", b: "유니픔 입니다.", c: "바지 입니다.", d: "가방 입니다." },
-    answer: "c",
-    explanation: "Review not Aviable.",
-    image: "rxasset/QSM2/img/img4.jpg"
-  },
-  {
-    question: "14<br>  가：내일 ....이/가 어때요?<br>나：비가 오고 바람이 많이 불 거예요.",
-    options: { a: "시간", b: "날씨", c: "날짜", d: "계절" },
-    answer: "b",
-    explanation: "Review not Aviable."
-  },
-  {
-    question: "15<br>  100000",
-    options: { a: "십만", b: "천만", c: "만", d: "조" },
-    answer: "a",
-    explanation: "Review not Aviable."
-  },
-  {
-    question: "16<br>  이 사진은 뭐의 입니까?",
-    options: { a: "공항 입니다.", b: "자전거 입니다.", c: "배 입니다.", d: "비행기 입니다." },
+    question: " 3<br>제가 제일 좋아하는 ________은/는 가을입니다. ",
+    options: { a: "음식", b: "운동", c: "과일", d: "계절" },
     answer: "d",
-    explanation: "Review not Aviable.",
-    image: "rxasset/QSM2/img/img5.jpg"
+    explanation: "Review Not aviable."
   },
   {
-    question: "17<br>  만오천백오십일",
-    options: { a: "151515", b: "10500", c: "15151", d: "15235" },
+    question: " 4<br>친구가 오늘 10시 비행기로 한국에 오기 때문에 _________에 마중 가요. ",
+    options: { a: "기차역", b: "정류장", c: "공항", d: "항구" },
     answer: "c",
-    explanation: "Review not Aviable."
+    explanation: "Review Not aviable."
   },
   {
-    question: "18<br>  지금 일요일 입니다, 모레 ..... 입니다.",
-    options: { a: "화요일 입니다.", b: "월요일 입니다.", c: "토요일 입니다.", d: "목요일 입니다." },
+    question: " 5<br>가：이 ________ 이름이 뭐예요?<br>나：수박이에요. 주로 여름철에 많이 먹는데, 아주 달아요. ",
+    options: { a: "과일", b: "고기", c: "과자", d: "식당" },
     answer: "a",
-    explanation: "Review not Aviable."
+    explanation: "Review Not aviable."
   },
   {
-    question: "19<br>  이 사진은 뭐의 입니까?",
-    options: { a: "선픙기 입니다.", b: "자동차 입니다.", c: "버스 입니다.", d: "차 입니다." },
-    answer: "a",
-    explanation: "Review not Aviable.",
-    image: "rxasset/QSM2/img/img6.jpg"
-  },
-  {
-    question: "20<br>  여기에서 제 집까지 ..... 입니다.",
-    options: { a: "세 길로미터 거리", b: "삼 길로미터", c: "세 길로미터", d: "삼 길로미터 거리" },
+    question: " 6<br>가：시장에 가서 무엇을 샀어요?<br>나：아무것도 사지 않고 _________만 했어요. ",
+    options: { a: "회의", b: "등산", c: "물건", d: "구경" },
     answer: "d",
-    explanation: "Review not Aviable.'"
+    explanation: "Review Not aviable."
+  },
+  {
+    question: " 7<br>가：어디에서 살아요?<br>나：직장 동료들과 함께 회사 _________에서 살아요. ",
+    options: { a: "화장실", b: "기숙사", c: "공원", d: "교실" },
+    answer: "b",
+    explanation: "Review Not aviable."
+  },
+  {
+    question: " 8<br>저는 올해 열아홉 살입니다. ________에 스무 살이 됩니다. ",
+    options: { a: "작년", b: "나이", c: "내년", d: "어제" },
+    answer: "c",
+    explanation: "Review Not aviable."
+  },
+  {
+    question: " 9<br>가：내일 __________이/가 어때요?<br>나：비가 오고 바람이 많이 불 거예요. ",
+    options: { a: "날씨", b: "날짜", c: "계절", d: "시간" },
+    answer: "a",
+    explanation: "Review Not aviable."
+  },
+  {
+    question: " 10<br>오늘은 9월 11일입니다. _________은/는 9월 12일입니다. ",
+    options: { a: "그저께", b: "어제", c: "모레", d: "내일" },
+    answer: "d",
+    explanation: "Review Not aviable."
+  },
+  {
+    question: " 11<br>저는 _________이/가 나빠요. 그래서 안경을 쓰지 않으면 잘 안 보여요. ",
+    options: { a: "머리", b: "눈", c: "귀", d: "손" },
+    answer: "b",
+    explanation: "Review Not aviable."
+  },
+  {
+    question: " 12<br>오늘은 우리 공장에 일이 별로 없었습니다. 그래서 오늘은 기계를 한 ______만 사용했습니다. ",
+    options: { a: "마리", b: "켤레", c: "대", d: "병" },
+    answer: "c",
+    explanation: "Review Not aviable."
+  },
+  {
+    question: " 13<br>가：공중전화를 걸려고 하는데 100원짜리 _________ 있어요?<br>나：아니요, 저도 없어요. 지폐만 있어요. ",
+    options: { a: "동전", b: "지갑", c: "가방", d: "종이" },
+    answer: "a",
+    explanation: "Review Not aviable."
+  },
+  {
+    question: " 14<br>가：머리가 많이 아파요.<br>나：머리가 아프면 ________을/를 드세요. 그건 처방전 없이 약국에서 살 수 있어요. ",
+    options: { a: "소화제", b: "항생제", c: "치약", d: "두통약" },
+    answer: "d",
+    explanation: "Review Not aviable."
+  },
+  {
+    question: " 15<br>가：아저씨, 이 생선 얼마예요?<br>나：한 ________에 2,000원이에요. ",
+    options: { a: "마리", b: "잔", c: "시간", d: "명" },
+    answer: "a",
+    explanation: "Review Not aviable."
+  },
+  {
+    question: " 16<br>아침에 일어나니까 ________가 많이 아팠습니다. 그래서 약국에 가서 두통약을 사 먹었습니다. ",
+    options: { a: "이", b: "머리", c: "배", d: "다리" },
+    answer: "b",
+    explanation: "Review Not aviable."
+  },
+  {
+    question: " 17<br>가：한국의 전통 옷이 한복이지요? 한복은 언제 입어요?<br>나：설날이나 추석 같은 __________에 주로 입어요. ",
+    options: { a: "결혼식", b: "계절", c: "명절", d: "겨울" },
+    answer: "c",
+    explanation: "Review Not aviable."
+  },
+  {
+    question: " 18<br>가：회사에 외국 사람도 있어요?<br>나：네, 세 ____ 있어요. ",
+    options: { a: "장", b: "개", c: "권", d: "명" },
+    answer: "d",
+    explanation: "Review Not aviable."
+  },
+  {
+    question: " 19<br>오늘은 금요일입니다. ________은/는 일요일입니다. ",
+    options: { a: "어제", b: "그제", c: "내일", d: "모레" },
+    answer: "d",
+    explanation: "Review Not aviable."
+  },
+  {
+    question: " 20<br>한국 사람은 밥하고 김치, 고기, 생선, 나물 같은 __________을 먹습니다. ",
+    options: { a: "그릇", b: "과일", c: "반찬", d: "후식" },
+    answer: "c",
+    explanation: "Review Not aviable."
   },
   {
     question: "21<br> 듣고 가장 알맞은 것을 고르십시오.",
@@ -250,24 +239,21 @@ const questions = [
     audio: "rxasset/QSM2/audio/audio17.mp3"
   },
   {
-    question: "38<br> 듣고 가장 알맞은 것을 고르십시오.",
-    options: { a: "", b: "", c: "", d: "" },
-    answer: "a",
-    explanation: "Review not Aviable.",
-    audio: "rxasset/QSM2/audio/audio18.mp3"
+    question: " 38<br>가：더 드세요.<br>나：많이 먹었어요. _________이/가 불러서 더 먹을 수 없어요. ",
+    options: { a: "눈", b: "발", c: "입", d: "배" },
+    answer: "d",
+    explanation: "Review Not aviable."
   },
   {
-    question: "39<br> 듣고 가장 알맞은 것을 고르십시오.",
-    options: { a:"", b: "", c: "", d: "" },
-    answer: "a",
-    explanation: "Review not Aviable.",
-    audio: "rxasset/QSM2/audio/audio19.mp3"
+    question: " 39<br>가：이 약은 언제 먹는 거예요?<br>나：하루 세 ____ 드세요. 아침, 점심, 저녁 식사 후에 드시면 됩니다. ",
+    options: { a: "명", b: "번", c: " 장", d: "대" },
+    answer: "b",
+    explanation: "Review Not aviable."
   },
   {
-    question: "40<br> 듣고 가장 알맞은 것을 고르십시오.",
-    options: { a: "", b: "", c: "", d: "" },
-    answer: "a",
-    explanation: "Review not Aviable.",
-    audio: "rxasset/QSM2/audio/audio20.mp3"
+    question: " 40<br>가：지수 씨는 술을 잘 마셔요?<br>나：맥주 한 _____쯤은 마실 수 있어요. ",
+    options: { a: "마리", b: "대", c: "병", d: " 장" },
+    answer: "c",
+    explanation: "Review Not aviable."
   },
 ];
