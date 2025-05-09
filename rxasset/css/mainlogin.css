@@ -9,6 +9,7 @@
     --accent-hover: #9a67ea;
     --danger-color: #cf6679;
     --border-color: #333;
+    --success-color: #4caf50;
 }
 
 body {
@@ -18,6 +19,19 @@ body {
     padding-top: 56px; /* To account for fixed navbar */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light Theme Overrides */
+body.light-theme {
+    --bg-primary: #f8f9fa;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #f1f1f1;
+    --text-primary: #212529;
+    --text-secondary: #495057;
+    --border-color: #dee2e6;
+    --accent-color: #6f42c1;
+    --accent-hover: #5a32a3;
 }
 
 /* Login Page Styles */
@@ -53,6 +67,18 @@ body {
     margin-bottom: 1.5rem;
 }
 
+.login-logo {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 0 8px rgba(187, 134, 252, 0.4));
+}
+
+.navbar-logo {
+    width: 30px;
+    height: 30px;
+}
+
 /* Form Elements */
 .dark-input {
     background-color: var(--bg-tertiary);
@@ -76,9 +102,26 @@ body {
     font-weight: 400;
 }
 
-/* Name Field Specific Styles */
-#name {
-    margin-bottom: 1.5rem;
+.input-group-text {
+    background-color: var(--bg-tertiary);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.input-group:focus-within .input-group-text {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.toggle-password {
+    background-color: var(--bg-tertiary);
+    border-left: none !important;
+}
+
+.toggle-password:hover {
+    background-color: var(--bg-secondary);
+    color: var(--accent-color);
 }
 
 /* Navbar Styles */
@@ -92,74 +135,23 @@ body {
     right: 0;
     z-index: 1030;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-
-.navbar-brand {
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    color: var(--accent-color) !important;
-    font-size: 1.3rem;
-}
-
-.nav-link {
-    color: var(--text-secondary) !important;
-    padding: 0.5rem 1rem !important;
-    margin: 0 0.2rem;
-    border-radius: 4px;
     transition: all 0.3s ease;
 }
 
-.nav-link:hover {
-    color: var(--text-primary) !important;
-    background-color: rgba(187, 134, 252, 0.1);
-}
-
-.nav-link.active {
-    color: var(--text-primary) !important;
-    background-color: rgba(187, 134, 252, 0.2);
-    font-weight: 500;
-}
-
-.navbar-text {
-    color: var(--text-secondary);
-    padding-right: 1rem;
+/* Search and Filter */
+.search-filter-container {
     display: flex;
-    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
-.navbar-text::before {
-    content: "";
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    background-color: var(--accent-color);
-    border-radius: 50%;
-    margin-right: 8px;
+.search-box {
+    min-width: 250px;
+    flex-grow: 1;
 }
 
-/* Welcome Message Animation */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-5px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-#loggedInUser {
-    display: inline-block;
-    animation: fadeIn 0.5s ease-out;
-    font-weight: 500;
-    color: var(--accent-color);
-}
-
-/* Logout Button */
-#logoutBtn {
-    border-radius: 6px;
-    padding: 6px 12px;
-    transition: all 0.3s ease;
-}
-
-#logoutBtn:hover {
-    background-color: var(--danger-color);
-    border-color: var(--danger-color);
+.category-filter {
+    width: 250px;
 }
 
 /* Question Cards */
@@ -173,32 +165,24 @@ body {
     height: 100%;
     display: flex;
     flex-direction: column;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.question-card.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    height: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
+    overflow: hidden;
 }
 
 .question-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     border-color: var(--accent-color);
-}
-
-.question-card h3 {
-    color: var(--accent-color);
-    margin-bottom: 1.2rem;
-    font-weight: 500;
-    font-size: 1.4rem;
-}
-
-.question-card p {
-    color: var(--text-secondary);
-    margin-bottom: 1.5rem;
-    flex-grow: 1;
-}
-
-.card-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    color: var(--accent-color);
-    opacity: 0.8;
 }
 
 /* Buttons */
@@ -210,6 +194,8 @@ body {
     font-weight: 500;
     letter-spacing: 0.5px;
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .btn-primary:hover {
@@ -218,82 +204,42 @@ body {
     transform: translateY(-2px);
 }
 
-.btn-outline-primary {
-    color: var(--accent-color);
-    border-color: var(--accent-color);
-    transition: all 0.3s ease;
-}
-
-.btn-outline-primary:hover {
-    background-color: var(--accent-color);
-    color: var(--text-primary);
-}
-
-/* Main Content */
-main.container {
-    padding-top: 2rem;
-    padding-bottom: 4rem;
-}
-
-main h2 {
-    color: var(--text-primary);
-    font-weight: 400;
-    margin-bottom: 2rem;
+.btn-primary .login-text {
     position: relative;
-    padding-bottom: 0.5rem;
+    z-index: 1;
 }
 
-main h2::after {
-    content: '';
+.btn-primary .spinner-border {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 60px;
-    height: 3px;
-    background-color: var(--accent-color);
-    border-radius: 3px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
 }
 
-/* Footer */
-footer {
-    background-color: var(--bg-tertiary);
-    border-top: 1px solid var(--border-color);
-    padding: 3rem 0 2rem;
-    margin-top: 3rem;
+.btn-primary.loading .login-text {
+    visibility: hidden;
 }
 
-footer h5 {
-    color: var(--accent-color);
-    margin-bottom: 1.2rem;
-    font-weight: 500;
+.btn-primary.loading .spinner-border {
+    display: inline-block !important;
 }
 
-footer a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    transition: color 0.3s ease;
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-footer a:hover {
-    color: var(--accent-color);
-    text-decoration: underline;
-}
-
-footer .text-center {
-    margin-top: 2rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--border-color);
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-}
-
-/* Error Message */
-.alert-danger {
-    background-color: var(--danger-color);
-    border-color: var(--danger-color);
-    color: var(--text-primary);
-    border-radius: 6px;
-    padding: 0.8rem 1rem;
+@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Responsive Adjustments */
@@ -303,6 +249,15 @@ footer .text-center {
         margin: 0 1rem;
     }
     
+    .search-filter-container {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .search-box, .category-filter {
+        width: 100%;
+    }
+    
     .navbar-brand {
         font-size: 1.1rem;
     }
@@ -310,31 +265,31 @@ footer .text-center {
     .question-card {
         padding: 1.5rem;
     }
-    
-    .navbar-text {
-        padding-right: 0.5rem;
-    }
-    
-    #logoutBtn {
-        margin-left: 0.5rem !important;
-        padding: 5px 10px;
-    }
-}
-/* Add to your existing CSS */
-.question-card .btn {
-    min-width: 120px;
 }
 
-.modal-content.dark-theme {
-    background-color: var(--bg-secondary);
-    color: var(--text-primary);
-    border: 1px solid var(--border-color);
+/* No Results Styling */
+#noResults {
+    animation: fadeIn 0.5s ease-out;
 }
 
-.modal-header {
-    border-bottom: 1px solid var(--border-color);
+#noResults i {
+    color: var(--text-secondary);
 }
 
-.modal-footer {
-    border-top: 1px solid var(--border-color);
+/* Session Timeout Modal */
+#sessionTimeoutModal .modal-content {
+    border: 1px solid var(--danger-color);
+}
+
+#sessionTimeoutModal .modal-header {
+    border-bottom-color: var(--danger-color);
+}
+
+#sessionTimeoutModal .modal-footer {
+    border-top-color: var(--danger-color);
+}
+
+#countdown {
+    color: var(--danger-color);
+    font-weight: bold;
 }
