@@ -478,9 +478,9 @@ class QuestionPortal {
                             <button class="btn btn-sm btn-outline-primary view-details" data-id="${question.id}">
                                 <i class="bi bi-eye me-1"></i>View
                             </button>
-                            <button class="btn btn-sm btn-outline-secondary edit-question" data-id="${question.id}" ${!this.state.currentUser?.isAdmin ? 'disabled' : ''}>
+                            <!--<button class="btn btn-sm btn-outline-secondary edit-question" data-id="${question.id}" ${!this.state.currentUser?.isAdmin ? 'disabled' : ''}>
                                 <i class="bi bi-pencil me-1"></i>Edit
-                            </button>
+                            </button>-->
                             <button class="btn btn-sm btn-outline-danger delete-question" data-id="${question.id}" ${!this.state.currentUser?.isAdmin ? 'disabled' : ''}>
                                 <i class="bi bi-trash me-1"></i>Delete
                             </button>
