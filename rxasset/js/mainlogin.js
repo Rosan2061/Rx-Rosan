@@ -67,13 +67,9 @@ class QuestionPortal {
 
         // Question elements
         this.questionCardsContainer = document.getElementById('questionCards');
-        this.searchInput = document.getElementById('searchInput');
-        this.searchButton = document.getElementById('searchButton');
-        this.categoryFilter = document.getElementById('categoryFilter');
         this.noResults = document.getElementById('noResults');
         this.backToQuestionsBtn = document.getElementById('backToQuestionsBtn');
-        this.filterToggle = document.getElementById('filterToggle');
-        this.advancedFilters = document.getElementById('advancedFilters');
+        
 
         // Sections
         this.sections.questions = document.getElementById('questionsSection');
@@ -107,22 +103,6 @@ class QuestionPortal {
         }
 
         // Question events
-        if (this.searchInput) {
-            this.searchInput.addEventListener('input', () => this.filterQuestions());
-        }
-
-        if (this.searchButton) {
-            this.searchButton.addEventListener('click', () => this.filterQuestions());
-        }
-
-        if (this.categoryFilter) {
-            this.categoryFilter.addEventListener('change', () => this.filterQuestions());
-        }
-
-        if (this.filterToggle) {
-            this.filterToggle.addEventListener('click', () => this.toggleAdvancedFilters());
-        }
-
         if (this.backToQuestionsBtn) {
             this.backToQuestionsBtn.addEventListener('click', () => this.showQuestionsSection());
         }
@@ -135,39 +115,39 @@ class QuestionPortal {
                 {
                     id: 1,
                     title: "Question Model 1",
-                    description: "This is the QUESTION MODEL 1 of korean language exam",
-                    category: "Korean Language Exam QUESTION SET MODEL - 1",
+                    description: "Korean Language Test Exam Model.",
+                    category: "QSM",
                     fileLink: "QSM1.html",
-                    difficulty: "medium",
+                    difficulty: "Easy",
                     type: "multiple",
                     status: "published",
-                    points: 5,
+                    points: 40,
                     createdAt: new Date(),
                     updatedAt: new Date()
                 },
                 {
                     id: 2,
                     title: "PDF Model 1",
-                    description: "This is the PDF File Of Korean Basice.",
+                    description: "Korean Language Detail PDF Basice Model.",
                     category: "PDF",
                     fileLink: "rxasset/file/한국 Basic RX' PASS = Rosan2061.pdf",
                     difficulty: "easy",
                     type: "pdf",
                     status: "published",
-                    points: 3,
+                    points: undefined,
                     createdAt: new Date(),
                     updatedAt: new Date()
                 },
                 {
                     id: 3,
                     title: "Question Model 2",
-                    description: "This is the QUESTION MODEL 2 of korean language exam",
-                    category: "Korean Language Exam QUESTION SET MODEL - 1",
+                    description: "Korean Language Test Exam Model",
+                    category: "QSM",
                     fileLink: "QSM2.html",
                     difficulty: "hard",
                     type: "multiple",
                     status: "published",
-                    points: 8,
+                    points: 40,
                     createdAt: new Date(),
                     updatedAt: new Date()
                 }
