@@ -1,623 +1,261 @@
 <!DOCTYPE html>
-<html lang="zxx">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/png" href="assets/img/logo/RX2061.png">
-    <meta name="description" content="Videograph Template">
-    <meta name="keywords" content="Videograph, unica, creative, html">
+    <link rel="icon" type="image/png" href="asset/img/logo/RX2061.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Rosan Khattri Chettri</title>
-
-    <!-- Google Font -->
-   
-    <link rel="stylesheet" href="assets/css/googlefont2.css">
-    <!-- Google Font End -->
-    
-
-    <!-- Css Styles -->
-    <link rel="stylesheet" href="assets/css/css1.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/popupwindow.css">
-    <link rel="stylesheet" href="assets/css/css4.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/css5.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/css6.css" type="text/css">
-    <!-- Css Styles End -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <link rel="stylesheet" href="asset/css/style.css">
+      <link rel="stylesheet" href="asset/css/popupwindow.css">
+     <link rel="stylesheet" href="asset/css/reviews style.css">
+     <link rel="stylesheet" href="asset/css/pop up navbar more.css">
+     <link rel="stylesheet" href="asset/css/Team slider function.css">
+     <link rel="stylesheet" href="asset/css/autowriting animation.css">
 </head>
-
 <body>
-    <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
+    <!-- Navbar -->
+    <nav class="navbar"style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('asset/img/Banner/Banner1.jpg');">
+        <div class="container">
+            <a href="#" class="logo">Rosan Xettri</a>
+            <div class="menu-toggle">☰</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="dropdown"><a href="#" onclick="toggleDropdown(event)">More</a></li>
+            </ul>
+        </div>
+    </nav>
+
+<section 
+    class="banner" 
+    id="home"
+    style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('asset/img/Banner/Banner1.jpg');"
+>
+    <div class="banner-content">
+        <h1>Rosan Khattri Chettri</h1>
+        <p id="auto-writer" class="auto-writer"></p>
+        <a href="#services" class="btn">Our Services</a>
     </div>
+</section>
 
-    <!-- Header Section Begin -->
-    <header class="header">
+    <!-- Services Section -->
+    <section class="services" id="services"  style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('asset/img/Banner/Banner1.jpg');">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-2">
-                    <div class="header__logo">
-                        <a href="./index.html"><img src="assets/img/logo/navbarlogo2.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-10">
-                    <div class="header__nav__option">
-                        <nav class="header__nav__menu mobile-menu">
-                            <ul>
-                                <li class="active"><a href="./index.html">Home</a></li>
-                                <li><a href="./About Rosan.html">About</a></li>
-                                <li><a href="./services.html">Services</a></li>
-                                <li><a href="./contact.html">Contact</a>
-                                    <ul class="dropdown">
-                                        <li><a href="mailto:rkc242855@gmail.com">rkc242855@<br>gmail.com</a></li>
-                                        <li><a href="mailto:rosankc820@gmail.com">rosankc820@<br>gmail.com</a></li>
-                                        <li><a href="tel:9826482279">+977 9826482279</a></li>
-                                    </ul>
-                                </li>
-                                 <li><a href="./RX ALL.html">MORE</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
+            <div class="section-title">
+                <h2>Our Services</h2>
             </div>
-            <div id="mobile-menu-wrap"></div>
-            
-        </div>
-    </header>
-    <!-- Header End -->
-
-    <!-- Hero Section Begin -->
-    <section class="hero">
-        <div class="hero__slider owl-carousel">
-            <div class="hero__item set-bg" data-setbg="assets/img/banner/RosanXettribanner1.jpg">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="hero__text">
-                                <span>It's Me </span>
-                                <h2> Rosan <br>Khattri Chettri </h2>
-                                <a href="About Rosan.html" class="primary-btn">See about Rosan</a>
-                            </div>
-                        </div>
-                    </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🛞</div>
+                    <h3>Logo Creation</h3>
+                    <p>A logo is a visual representation of a brand, combining design elements like colors, shapes, and typography to create a unique, memorable symbol. It serves as the first impression of a brand, conveying its identity and values.</p>
                 </div>
-            </div>
-            <div class="hero__item set-bg" data-setbg="assets/img/banner/RosanXettribanner1.jpg">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="hero__text">
-                                <span>I Am A </span>
-                                <h2>Website Developer</h2>
-                                <a href="services.html" class="primary-btn">More Detail</a>
-                            </div>
-                        </div>
-                    </div>
+                <div class="service-card">
+                    <div class="service-icon">■</div>
+                    <h3>Website Designing</h3>
+                    <p>Website designing is the process of creating a visually appealing and user-friendly layout for a website. It focuses on aesthetics, navigation, and functionality to enhance user experience across different devices.</p>
                 </div>
-            </div>
-            <div class="hero__item set-bg" data-setbg="assets/img/banner/RosanXettribanner1.jpg">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="hero__text">
-                                <span> I Am A </span>
-                                <h2> Designer <br> Editior </h2>
-                                <a href="services.html" class="primary-btn"> More Detail </a>
-                            </div>
-                        </div>
-                    </div>
+                <div class="service-card">
+                    <div class="service-icon">↖▭↗</div>
+                    <h3>Photo Editing</h3>
+                    <p>Photo editing is the process of enhancing or altering an image to improve its appearance. This includes adjusting exposure, colors, sharpness, removing imperfections, cropping, and adding effects or filters to achieve the desired look or style.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">▮</div>
+                    <h3>Poster Designing</h3>
+                    <p>Poster designing is the process of creating visually striking graphics to communicate a message or promote something. It involves using images, typography, and colors to capture attention and convey key information effectively.</p>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Hero Section End -->
 
-    <!-- Services Section Begin -->
-    <section class="services spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="services__title">
-                        <div class="section-title">
-                            <span>Our services</span>
-                            <h2>What We do?</h2>
-                        </div>
-                        <p>Hi, I am Rosan Xettri<br>
-                            We specialize in:<br>
-                            ✔ Logo Creation        - Crafting unique and memorable brand identities.<br>  
-                            ✔ Website Designing    - Creating visually stunning and user-friendly websites.<br>   
-                            ✔ Web Development      - Developing responsive and high-performance websites.<br>   
-                            ✔ Photo Editing        - Enhancing and retouching images with precision.<br>   
-                            ✔ Graphic Designing    - Designing eye-catching visuals for brands and businesses.<br>   
-                            ✔ Poster Design        - Creating impactful posters for promotions and events.<br>
-                            With creativity, precision, and innovation, we bring ideas to life.  
-                            Let’s create something amazing together!.</p>
-                        <a href="services.html" class="primary-btn">View all services</a>
-                    </div>
-                </div>
-                <div class="col-lg-8">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="services__item">
-                                <div class="services__item__icon">
-                                    <img src="assets/img/icon/logo design icon.png" alt="">
-                                </div>
-                                <h4>Logo Creation</h4>
-                                <p>A logo is a visual representation of a brand, combining design elements like colors, shapes, and typography to create a unique, memorable symbol. It serves as the first impression of a brand, conveying its identity and values.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="services__item">
-                                <div class="services__item__icon">
-                                    <img src="assets/img/icon/Web designing  icon.png" alt="">
-                                </div>
-                                <h4>Website Designing</h4>
-                                <p>Website designing is the process of creating a visually appealing and user-friendly layout for a website. It focuses on aesthetics, navigation, and functionality to enhance user experience across different devices.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="services__item">
-                                <div class="services__item__icon">
-                                    <img src="assets/img/icon/Photo editing icon.png" alt="">
-                                </div>
-                                <h4>Photo Editing</h4>
-                                <p>Photo editing is the process of enhancing or altering an image to improve its appearance. This includes adjusting exposure, colors, sharpness, removing imperfections, cropping, and adding effects or filters to achieve the desired look or style.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="services__item">
-                                <div class="services__item__icon">
-                                    <img src="assets/img/icon/Poster designing icon.png">
-                                </div>
-                                <h4>Poster Designing</h4>
-                                <p>Poster designing is the process of creating visually striking graphics to communicate a message or promote something. It involves using images, typography, and colors to capture attention and convey key information effectively.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Services Section End -->
-
-    <!-- Team Section Begin -->
-    <section class="team spad set-bg" data-setbg="assets/img/banner/teamback.jpg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title team__title">
-                        <span>Nice to meet</span>
-                        <h2>OUR Team</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6 p-0">
-                    <div class="team__item set-bg" data-setbg="assets/img/R&T/T1.png">
-                        <div class="team__item__text">
-                            <h4>Prasamsha Khanal</h4>
-                            <p> Web Developer</p>
-                            <div>
-                                <li><a href="https://www.facebook.com/profile.php?id=100080956815490" target="_blank">
-                                    <img src="assets/img/icon/facebook.png" alt="Facebook" width="30"> Facebook
-                                </a></li>
-                                <!--<li><a href="#" target="_blank">
-                                    <img src="assets/img/icon/insta.png" alt="Insta" width="30">Instagram 
-                                </a></li>-->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 p-0">
-                    <div class="team__item team__item--second set-bg" data-setbg="assets/img/R&T/T2.png">
-                        <div class="team__item__text">
-                            <h4>Puja Acharya Shrestha</h4>
-                            <p>Designer</p>
-                            <div>
-                                <li><a href="https://www.facebook.com/puja.acharya.7503314" target="_blank">
-                                    <img src="assets/img/icon/facebook.png" alt="Facebook" width="30"> Facebook
-                                </a></li>
-                                <li><a href="https://www.instagram.com/puja.acharya.7503314/" target="_blank">
-                                    <img src="assets/img/icon/insta.png" alt="Insta" width="30">Instagram 
-                                </a></li>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 p-0">
-                    <div class="team__item team__item--third set-bg" data-setbg="assets/img/R&T/T3.png">
-                        <div class="team__item__text">
-                            <h4>लिला बुढा मगर</h4>
-                            <p>Video Editor</p>
-                            <div>
-                                <li><a href="https://www.facebook.com/profile.php?id=100070727865998" target="_blank">
-                                    <img src="assets/img/icon/facebook.png" alt="Facebook" width="30"> Facebook
-                                </a></li>
-                                <!--<li><a href="#" target="_blank">
-                                    <img src="assets/img/icon/insta.png" alt="Insta" width="30">Instagram 
-                                </a></li>-->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 p-0">
-                    <div class="team__item team__item--four set-bg" data-setbg="assets/img/R&T/T4.png">
-                        <div class="team__item__text">
-                            <h4>कुस्मा तरामु मगर </h4>
-                            <p>Reviewer</p>
-                            <div>
-                                <li><a href="https://www.facebook.com/profile.php?id=100090446589889" target="_blank">
-                                    <img src="assets/img/icon/facebook.png" alt="Facebook" width="30"> Facebook
-                                </a></li>
-                                <!--<li><a href="#" target="_blank">
-                                    <img src="assets/img/icon/insta.png" alt="Insta" width="30">Instagram 
-                                </a></li>-->
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                <div class="col-lg-12 p-0">
-                    <div class="team__btn">
-                        <a href="https://www.facebook.com/RosanXettri.2004" class="primary-btn">Join Us !</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Team Section End -->
-
-<!-- Latest Blog Section Begin -->
-<section class="latest spad">
+<!-- Team Section -->
+<section class="team" id="team" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('asset/img/Banner/Banner1.jpg');">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section-title center-title">
-                    <span>About My Work</span>
-                    <h2>Reviews</h2>
-                </div>
-            </div>
+        <div class="section-title">
+            <h2>Our Team</h2>
         </div>
-
-        <div class="row">
-            <div class="latest__slider owl-carousel">
-                <!-- Review 1 -->
-                <div class="blog__item" data-bg="assets/img/R&T/Leela.jpg">
-                    <h4>Leela Bhudha Magar</h4>
-                    <ul>
-                        <li>Banganga-10, Kapilvastu</li>
-                        <li>Nepal</li>
-                    </ul>
-                    <p>Rosan Xettri is known for his dedication to excellence in graphic design and gaming. His innovative mindset, coupled with his refined skills, allows him to create visually stunning designs and achieve remarkable success in the gaming world.</p>
-                    <a href="https://www.facebook.com/profile.php?id=100070727865998">About</a>
+        <div class="team-slider-container">
+            <div class="team-slider">
+                <div class="team-slide">
+                    <div class="team-member">
+                        <img src="asset/img/R&T/T2.png" alt="Sarah Johnson">
+                        <h3>Puja Acharya Shrestha</h3>
+                        <p class="position">Palpa, Nepal</p>
+                        <p>Designer</p>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/puja.acharya.7503314" aria-label="Puja Acharya Shrestha's Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/puja.acharya.7503314/" aria-label="Puja Acharya Shrestha's Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
                 </div>
-
-                <!-- Review 2 -->
-                <div class="blog__item" data-bg="assets/img/R&T/Rohit.jpg">
-                    <h4>Rohit K C</h4>
-                    <ul>
-                        <li>Kapilvastu</li>
-                        <li>Nepal</li>
-                    </ul>
-                    <p>Rosan Xettri demonstrates exceptional skill in graphic design and online gaming, blending creativity with technical precision to produce outstanding results. His innovative approach and dedication to excellence set him apart, earning him well-deserved recognition in both fields.</p>
-                    <a href="https://www.facebook.com/profile.php?id=100093905854248">About</a>
+                <div class="team-slide">
+                    <div class="team-member">
+                        <img src="asset/img/R&T/T3.png" alt="Michael Chen">
+                        <h3>Leela Bhudha Magar</h3>
+                        <p class="position">Banganga-10, Kapilvastu</p>
+                        <p>Video Editor</p>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/profile.php?id=100070727865998" aria-label="Leela Bhudha Magar's Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Leela Bhudha Magar's Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
                 </div>
-
-                <!-- Review 3 -->
-                <div class="blog__item" data-bg="assets/img/R&T/Sita.jpg">
-                    <h4>सीता विश्वकर्मा</h4>
-                    <ul>
-                        <li>Kerabbari-9, Devijhod</li>
-                        <li>Nepal</li>
-                    </ul>
-                    <p>Rosan Khattri Chettri is a talented graphic designer and online gaming innovator. Known for his stunning designs and exceptional gaming experiences, he blends creativity with technical skill, earning admiration from clients and peers.</p>
-                    <a href="https://www.facebook.com/profile.php?id=61557001621377">About</a>
+                <div class="team-slide">
+                    <div class="team-member">
+                        <img src="asset/img/R&T/T4.png" alt="Emma Rodriguez">
+                        <h3>कुस्मा तरामु मगर</h3>
+                        <p class="position">Gulmi-Lumpek</p>
+                        <p>Reviewer</p>
+                       <div class="social-links">
+                            <a href="https://www.facebook.com/profile.php?id=100090446589889" aria-label="कुस्मा तरामु मगर's Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="कुस्मा तरामु मगर's Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
                 </div>
-                <!-- Review 4-->
-                <div class="blog__item" data-bg="assets/img/R&T/Kusum.jpg">
-                    <h4>कुस्मा तरामु मगर</h4>
-                    <ul>
-                        <li>Gulmi-Lumpek</li>
-                        <li>Nepal</li>
-                    </ul>
-                    <p>Rosan Khattri Chettri is a talented graphic designer with  experience, specializing in logos, business cards, and more. He delivers creative and professional work. Highly recommended!</p>
-                    <a href="https://www.facebook.com/profile.php?id=61554583595652">About</a>
+                <div class="team-slide">
+                    <div class="team-member">
+                        <img src="asset/img/R&T/T1.png" alt="David Kim">
+                        <h3>Prasamsha Khanal</h3>
+                        <p class="position">Butwal</p>
+                        <p>Web Developer</p>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/profile.php?id=100080956815490" aria-label="Prasamsha Khanal's Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Prasamsha Khanal's Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
                 </div>
-                <!-- Review 5 -->
-                <div class="blog__item" data-bg="assets/img/R&T/Bindu.jpg">
-                    <h4>बिन्दु भट्टराई</h4>
-                    <ul>
-                        <li>Butwal</li>
-                        <li>Nepal</li>
-                    </ul>
-                    <p>Rosan Khattri Chettri excels in graphic design and online gaming, delivering impressive results with his unique creativity and technical expertise. His work is highly praised for its quality and innovation, making him a standout talent in his fields.</p>
-                    <a href="https://www.facebook.com/profile.php?id=100070841841218">About</a>
-                </div>
-                <!-- Review 6 -->
-                <div class="blog__item" data-bg="assets/img/R&T/Prasamsha.jpg">
-                    <h4>Prasamsha Khanal</h4>
-                    <ul>
-                        <li>Butwal</li>
-                        <li>Nepal</li>
-                    </ul>
-                    <p>Rosan Xettri is a talented graphic designer and gamer who seamlessly blends creativity with technical expertise. His innovative approach and attention to detail make his work stand out, consistently delivering high-quality results.</p>
-                    <a href="https://www.facebook.com/profile.php?id=100080956815490">About</a>
-                </div>
-
-
-                <!-- Add More Reviews Here -->
             </div>
         </div>
     </div>
 </section>
 
-<!-- Include Owl Carousel if Not Already Included -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-
-<style>
-.blog__item {
-    position: relative;
-    background: rgb(19, 6, 95);
-    padding: 24px;
-    border-radius: 20px;
-    min-height: 250px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    cursor: pointer;
-    overflow: hidden;
-    color: #fff;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-    transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
-    will-change: transform, box-shadow;
-    backface-visibility: hidden;
-}
-
-/* Image background reveal */
-.blog__item::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url('your-image.jpg'); /* Replace with dynamic image */
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transform: scale(1.05);
-    filter: brightness(1.1) blur(2px);
-    transition: opacity 0.35s ease-in-out, transform 0.35s ease-in-out, filter 0.35s ease-in-out;
-    z-index: 1;
-}
-
-/* Dark gradient overlay for better text visibility */
-.blog__item::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
-    opacity: 0;
-    transition: opacity 0.35s ease-in-out;
-    z-index: 1;
-}
-
-/* Hover effect */
-.blog__item:hover {
-    transform: scale(1.02);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
-}
-
-.blog__item:hover::before,
-.blog__item:hover::after {
-    opacity: 1;
-    transform: scale(1);
-    filter: brightness(1) blur(0);
-}
-
-/* Content stays readable above background */
-.blog__item h4,
-.blog__item ul,
-.blog__item p,
-.blog__item a {
-    position: relative;
-    z-index: 2;
-    color: #fff;
-    transition: color 0.2s ease;
-}
-
-/* Optional text color lift */
-.blog__item:hover h4,
-.blog__item:hover p {
-    color: #e2e8f0;
-}
-
-</style>
-
-<script>
-    $(document).ready(function () {
-        // Initialize Owl Carousel
-        $(".latest__slider").owlCarousel({
-            loop: true,
-            margin: 20,
-            nav: true,
-            dots: false,
-            autoplay: true,
-            autoplayTimeout: 3000,
-            responsive: {
-                0: { items: 1 },
-                600: { items: 2 },
-                1000: { items: 3 }
-            }
-        });
-    
-        // Style tweaks for smooth visual effects
-        $(".blog__item").css({
-            "transition": "all 0.4s ease",
-            "cursor": "pointer"
-        });
-    
-        // Store the active card
-        let activeCard = null;
-    
-        // On hover or click
-        $(".blog__item").on("mouseenter click", function (e) {
-            e.stopPropagation();
-    
-            const $this = $(this);
-            const bgImage = $this.data("bg");
-    
-            // If this card is already active, deactivate it on click
-            if (activeCard && activeCard.is($this)) {
-                resetCard($this);
-                activeCard = null;
-                return;
-            }
-    
-            // Deactivate previously active card
-            if (activeCard) resetCard(activeCard);
-    
-            // Activate this card
-            if (bgImage) {
-                $this.css({
-                    "background-image": `url('${bgImage}')`,
-                    "background-size": "cover",
-                    "background-position": "center",
-                    "box-shadow": "0 0 15px rgba(255, 255, 255, 0.6)",
-                    "border-radius": "10px"
-                });
-                activeCard = $this;
-            }
-        });
-    
-        // On mouse leave, reset background (desktop UX)
-        $(".blog__item").on("mouseleave", function () {
-            if (!$(this).is(activeCard)) {
-                resetCard($(this));
-            }
-        });
-    
-        // Click outside any card to reset all
-        $(document).on("click", function () {
-            if (activeCard) {
-                resetCard(activeCard);
-                activeCard = null;
-            }
-        });
-    
-        // Reset card styles
-        function resetCard($card) {
-            $card.css({
-                "background-image": "",
-                "background": "rgb(19, 6, 95)",
-                "box-shadow": "none"
-            });
-        }
-    });
-    </script>
-
-<!-- Latest Blog Section End -->
-
-    <!-- Call To Action Section Begin -->
-    <section class="callto spad set-bg" data-setbg="assets/img/banner/BackBanner1.jpg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="callto__text">
-                        <h2>Bringing Ideas to Life, One Pixel at a Time.</h2>
-                        <p>Rosan Xettri Studio  </p>
-                        <a href="https://www.facebook.com/RosanXettri.2004">Join us !</a>
+   <!-- Reviews Section -->
+<section class="reviews" id="reviews"style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('asset/img/Banner/Banner1.jpg');">
+    <div class="container">
+        <div class="section-title">
+            <h2>Client Reviews</h2>
+        </div>
+        <div class="reviews-container">
+            <div class="review-card" onclick="toggleReviewImage(this)" 
+                 data-image="asset/img/R&T/Bindu.jpg">
+                <div class="quote-icon">"</div>
+                <p class="review-text">Rosan Khattri Chettri excels in graphic design and online gaming, delivering impressive results with his unique creativity and technical expertise. His work is highly praised for its quality and innovation, making him a standout talent in his fields.</p>
+                <div class="reviewer">
+                    <img src="asset/img/R&T/Bindu.jpg" alt="Reviewer" class="reviewer-img">
+                    <div class="reviewer-info">
+                        <h4>बिन्दु भट्टराई</h4>
+                        <p>Butwal</p>
                     </div>
                 </div>
             </div>
+            <div class="review-card" onclick="toggleReviewImage(this)" 
+                 data-image="asset/img/R&T/Kusum.jpg">
+                <div class="quote-icon">"</div>
+                <p class="review-text">Rosan Khattri Chettri is a talented graphic designer with  experience, specializing in logos, business cards, and more. He delivers creative and professional work. Highly recommended!.</p>
+                <div class="reviewer">
+                    <img src="asset/img/R&T/Kusum.jpg" alt="Reviewer" class="reviewer-img">
+                    <div class="reviewer-info">
+                        <h4>कुस्मा तरामु मगर</h4>
+                        <p>Gulmi-Lumpek</p>
+                    </div>
+                </div>
+            </div>
+            <div class="review-card" onclick="toggleReviewImage(this)" 
+                 data-image="asset/img/R&T/Leela.jpg">
+                <div class="quote-icon">"</div>
+                <p class="review-text">Rosan Xettri is known for his dedication to excellence in graphic design and gaming. His innovative mindset, coupled with his refined skills, allows him to create visually stunning designs and achieve remarkable success in the gaming world.</p>
+                <div class="reviewer">
+                    <img src="asset/img/R&T/Leela.jpg" alt="Reviewer" class="reviewer-img">
+                    <div class="reviewer-info">
+                        <h4>Leela Bhudha Magar</h4>
+                        <p>Banganga-10, Kapilvastu</p>
+                    </div>
+                </div>
+            </div>
+            <div class="review-card" onclick="toggleReviewImage(this)" 
+                 data-image="asset/img/R&T/Prasamsha.jpg">
+                <div class="quote-icon">"</div>
+                <p class="review-text">Rosan Xettri is a talented graphic designer and gamer who seamlessly blends creativity with technical expertise. His innovative approach and attention to detail make his work stand out, consistently delivering high-quality results.</p>
+                <div class="reviewer">
+                    <img src="asset/img/R&T/Prasamsha.jpg" alt="Reviewer" class="reviewer-img">
+                    <div class="reviewer-info">
+                        <h4>Prasamsha Khanal</h4>
+                        <p>Butwal</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Knowledge Section -->
+    <section class="knowledge"style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('asset/img/Banner/Banner1.jpg');">
+        <div class="container">
+            <p>"The only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle." - Steve Jobs</p>
         </div>
     </section>
-    <!-- Call To Action Section End -->
 
-    <!-- Footer Section Begin -->
-    <footer class="footer">
+    <!-- Footer -->
+    <footer class="footer" id="contact"style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('asset/img/Banner/Banner1.jpg');">
         <div class="container">
-            <div class="footer__top">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="footer__top__logo">
-                            <a> <!--href="#"--><img src="assets/img/logo/navbarlogo2.png" alt=""></a>
-                        </div>
-                    </div>
-                   
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>About Us</h3>
+                    <p>We are a passionate team dedicated to delivering exceptional digital solutions that help businesses thrive in the online world.</p>
                 </div>
-            </div>
-            <div class="footer__option">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="footer__option__item">
-                            <h5>About us</h5>
-                            <p>Rosan Xettri is a passionate graphic designer and gamer who loves blending creativity with technical skills. With a keen eye for detail and an innovative mindset, he always strives to create something unique and high-quality.</p>
-                            <a href="About Rosan.html" class="read__more"> More about Rosan</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-3 col-sm-3">
-                        <div class="footer__option__item">
-                            <h5>Usefull Links</h5>
-                            <ul>
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="About Rosan.html">About us</a></li>
-                                <li><a href="services.html">Our Services</a></li>
-                                <li><a href="contact.html">Contact Us</a></li>
-                                <li><a href="music.html">Music</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-3 col-sm-3">
-                        <div class="footer__option__item">
-                            <h5>Our Projects / Tool's</h5>
-                            <ul>
-                                <!--<li><a href="Tax Invoice.html">Tax Invoice PC</a></li>
-                                <li><a href="QR Genetor.html">QR Genator</a></li>
-                                <li><a href="Postal Code NEPAL.html">Postal Code Finder</a></li>-->
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-3 col-sm-3">
-                        <div class="footer__option__item">
-                            <h5> Connect with us </h5>
-                            <ul>
-                                <li><a href="https://www.facebook.com/Rosan.2061" target="_blank">
-                                    <img src="assets/img/icon/facebook.png" alt="Facebook" width="30"> Facebook
-                                </a></li>
-                                <li><a href="https://www.instagram.com/Rosan.2061" target="_blank">
-                                    <img src="assets/img/icon/insta.png" alt="Insta" width="30">Instagram 
-                                </a></li>
-                                <li><a href="https://www.youtube.com/@RX_E-SPORTS" target="_blank">
-                                    <img src="assets/img/icon/youtube.png" alt="Youtube" width="30">Youtube
-                                </a></li>
-                                <li><a href="https://www.facebook.com/RosanXettri.2004" target="_blank">
-                                    <img src="assets/img/icon/facebook.png" alt="Facebook" width="30"> Facebook Page
-                                </a></li>
-                            </ul>
-                        </div>
-                    </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="#reviews">Client Reviews</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#">More</a></li>
+                    </ul>
                 </div>
-            </div>
-            <div class="footer__copyright">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <!-- Rx Rosan copyright Licned   -->
-                        <p class="footer__copyright__text">Copyright &copy;
-                            <script>
-                                document.write(new Date().getFullYear());
-                            </script>
-                             <a href="index.html">Rosan Khattri Chettri</a> All rights reserved </i>  
-                        </p>
-                        <!--  Rx Rosan copyright Licned -->
-                    </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Mobile Apps</a></li>
+                        <li><a href="#">SEO Optimization</a></li>
+                        <li><a href="#">Digital Marketing</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                    </ul>
                 </div>
-            </div>
-        </div>
-    </footer>
-    <!-- Footer Section End -->
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li>Address : Banganga-10,Pakadiachapa Kapilvastu( NEPAL )</li>
+                        <li>Contact : 9826482279</li>
+                        <li>Email : rkc242855@gmail.com</li> 
+                        <li>Current Time : <span id="current-time"></span></li>
 
-     <!-- Popup Window -->
+<script>
+  function updateTime() {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+    document.getElementById('current-time').textContent = timeString;
+  }
+  
+  // Update time immediately and then every minute
+  updateTime();
+  setInterval(updateTime, 60000);
+</script>
+                    </ul>
+                </div>
+            </div>
+           <div class="footer-bottom">
+    <p>&copy; <script>document.write(new Date().getFullYear())</script> Rosan Xettri. All Rights Reserved.</p>
+</div>
+        </div>
+
+         <!-- Popup Window -->
 <div id="popup">
     <div class="popup-content">
         <button class="btn-close" id="close-popup" aria-label="Close popup">&times;</button>
@@ -626,12 +264,12 @@
             <div class="carousel-item active">
                 <h2>Welcome</h2>
                 <p>"Hi, I'm Rosan Xettri, a passionate web designer dedicated to creating stunning and user-friendly websites. Let's build something amazing!"</p>
-                <img src="assets/img/R&T/R M.jpg" alt="Rosan Xettri" loading="lazy">
+                <img src="asset/img/R&T/R M.jpg" alt="Rosan Xettri" loading="lazy">
             </div>
             <div class="carousel-item">
                 <h2>Prasamsha Khanal</h2>
                 <p>"Meet my web design partner, Prasamsha Khanal! 🚀 A creative mind with a passion for stunning, user-friendly designs. Excited to build amazing projects together!"</p>
-                <img src="assets/img/R&T/P M.jpg" alt="Prasamsha Khanal" loading="lazy">
+                <img src="asset/img/R&T/P M.jpg" alt="Prasamsha Khanal" loading="lazy">
             </div>
             <div class="carousel-item">
                 <p> Join Us More Contents .</p>
@@ -655,13 +293,25 @@
     </div>
 </div>
 <!-- Popup Window End -->
-    <!-- Js Plugins -->
-    <script src="assets/js/js1.js"></script>
-    <script src="assets/js/js5.js"></script>
-    <script src="assets/js/js6.js"></script>
-    <script src="assets/js/js7.js"></script>
-    <script src="assets/js/js8.js"></script>
-    <script src="assets/js/popupwindow.js"></script>
-     <!-- Js Plugins End -->
+
+<!-- The popup/modal -->
+<div class="modal-overlay" id="moreModal">
+  <div class="modal-content">
+    <a href="RX ALL.html">Korean Course</a>
+    <a href="#">About Rosan</a>
+    <a href="#">Music</a>
+    <button class="close-btn" onclick="closeModal()">×</button>
+  </div>
+</div>
+<!-- The popup/modal End -->
+
+    </footer>
+        <script src="asset/js/script.js"></script>
+        <script src="asset/js/popupwindow.js"></script>
+        <script src="asset/js/reviews style.js"></script>
+        <script src="asset/js/Navbar function.js"></script>
+        <script src="asset/js/pop up navbar more.js"></script>
+        <script src="asset/js/Team slider function.js"></script>
+        <script src="asset/js/autowriting animation.js"></script>
 </body>
 </html>
