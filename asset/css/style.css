@@ -126,7 +126,7 @@
 
         /* Banner Section */
         .banner {
-            height: 100vh;
+            height: 550px;
             background-size: cover;
             background-position: center;
             display: flex;
