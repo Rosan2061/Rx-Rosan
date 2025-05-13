@@ -2,11 +2,13 @@
     document.addEventListener('DOMContentLoaded', function() {
         const textElement = document.getElementById('auto-writer');
         const texts = [
-            "Hi, I am Rosan Khattri Chettri",
-            "Welcome to my website",
-            "We provide top-notch services",
-            "To help your business grow",
-            "And succeed in the digital world"
+            "Hello Everyone !",
+            "I Am Rosan Khattri Chettri.",
+            "Welcome To My Website.",
+            "I Am A Graphic Designer. ",
+            "I Am A Website Developer .",
+            "For More Services and Update's ",
+            "Contact or Follow US."
         ];
         let textIndex = 0;
         let charIndex = 0;

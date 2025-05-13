@@ -9,8 +9,8 @@
     }
     
     .review-card {
-        background: #6a0dad;
-        color: white;
+        background: #07000c;
+        color: rgb(27, 12, 236);
         padding: 30px;
         border-radius: 12px;
         position: absolute;
@@ -44,7 +44,7 @@
     
     .review-card:hover {
         transform: translateY(-3px) !important;
-        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 12px 25px rgba(8, 4, 240, 0.685);
     }
     
     .quote-icon {
@@ -83,12 +83,12 @@
         border-radius: 50%;
         margin-right: 20px;
         object-fit: cover;
-        border: 3px solid rgba(255, 255, 255, 0.3);
+        border: 3px solid rgba(199, 7, 7, 0.836);
         transition: all 0.3s ease;
     }
     
     .review-card:hover .reviewer-img {
-        border-color: rgba(255, 255, 255, 0.7);
+        border-color: rgb(7, 219, 235);
         transform: scale(1.05);
     }
     
