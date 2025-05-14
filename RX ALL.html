@@ -28,8 +28,8 @@
         <div class="login-box">
             <div class="text-center mb-4">
                 <img src="asset/img/logo/rx.png" alt="Logo" class="login-logo">
-                <h1>Question Portal</h1>
-                <p class="text-muted">Advanced question management system</p>
+                <h1>Rosan Xettri <br>Login Page </h1>
+                <p class="text-muted">Please inter id or password given by admin </p>
             </div>
             
             <form id="loginForm" novalidate>
@@ -110,230 +110,20 @@
             <!-- Questions Section -->
             <section class="content-section" id="questionsSection">
                 <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h2>Question Bank</h2>
-                    
+                    <h2>Question Bank</h2> 
                 </div>
-                
-                
+
                 <div class="row" id="questionCards">
                     <!-- Question cards will be inserted here by JavaScript -->
                 </div>
                 
-                <div id="noResults" class="text-center py-5 d-none">
-                    <i class="bi bi-exclamation-circle fs-1"></i>
-                    <h4 class="mt-3">No questions found</h4>
-                    <p class="text-muted">Try adjusting your search or filter criteria</p>
-                    <button class="btn btn-primary mt-3" id="addQuestionEmptyBtn">
-                        <i class="bi bi-plus-lg me-1"></i>Add New Question
-                    </button>
-                </div>
+                <div id="noResults" class="text-center py-5 d-none"></div>
             </section>
             
-            <!-- Create/Edit Question Section -->
-            <section class="content-section d-none" id="createSection">
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h2 id="questionFormTitle">Create New Question</h2>
-                    <button class="btn btn-outline-secondary" id="backToQuestionsBtn">
-                        <i class="bi bi-arrow-left me-1"></i>Back to Questions
-                    </button>
-                </div>
-                
-                <form id="questionForm">
-                    <div class="row mb-4">
-                        <div class="col-md-8">
-                            <div class="mb-3">
-                                <label for="questionTitle" class="form-label">Question Title</label>
-                                <input type="text" class="form-control dark-input" id="questionTitle" required>
-                            </div>
-                            
-                            <div class="mb-3">
-                                <label for="questionText" class="form-label">Question Text</label>
-                                <div class="rich-text-editor">
-                                    <div class="rich-text-toolbar">
-                                        <button type="button" data-command="bold"><i class="bi bi-type-bold"></i></button>
-                                        <button type="button" data-command="italic"><i class="bi bi-type-italic"></i></button>
-                                        <button type="button" data-command="underline"><i class="bi bi-type-underline"></i></button>
-                                        <div class="vr mx-2"></div>
-                                        <button type="button" data-command="insertUnorderedList"><i class="bi bi-list-ul"></i></button>
-                                        <button type="button" data-command="insertOrderedList"><i class="bi bi-list-ol"></i></button>
-                                        <div class="vr mx-2"></div>
-                                        <button type="button" data-command="createLink"><i class="bi bi-link"></i></button>
-                                        <button type="button" data-command="insertImage"><i class="bi bi-image"></i></button>
-                                        <div class="vr mx-2"></div>
-                                        <button type="button" data-command="undo"><i class="bi bi-arrow-counterclockwise"></i></button>
-                                        <button type="button" data-command="redo"><i class="bi bi-arrow-clockwise"></i></button>
-                                    </div>
-                                    <div class="rich-text-content" id="questionText" contenteditable="true"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="mb-3">
-                                <label class="form-label">Question Type</label>
-                                <div class="btn-group w-100" role="group">
-                                    <input type="radio" class="btn-check" name="questionType" id="typeMultiple" value="multiple" autocomplete="off" checked>
-                                    <label class="btn btn-outline-primary" for="typeMultiple">Multiple Choice</label>
-                                    
-                                    <input type="radio" class="btn-check" name="questionType" id="typeTrueFalse" value="truefalse" autocomplete="off">
-                                    <label class="btn btn-outline-primary" for="typeTrueFalse">True/False</label>
-                                    
-                                    <input type="radio" class="btn-check" name="questionType" id="typeShort" value="short" autocomplete="off">
-                                    <label class="btn btn-outline-primary" for="typeShort">Short Answer</label>
-                                    
-                                    <input type="radio" class="btn-check" name="questionType" id="typeEssay" value="essay" autocomplete="off">
-                                    <label class="btn btn-outline-primary" for="typeEssay">Essay</label>
-                                </div>
-                            </div>
-                            
-                            <div id="answerOptionsContainer">
-                                <div class="mb-3">
-                                    <label class="form-label">Answer Options</label>
-                                    <div class="answer-options">
-                                        <div class="input-group mb-2">
-                                            <div class="input-group-text">
-                                                <input class="form-check-input mt-0" type="radio" name="correctAnswer" value="1" checked>
-                                            </div>
-                                            <input type="text" class="form-control dark-input" placeholder="Option 1">
-                                            <button class="btn btn-outline-danger remove-option" type="button">
-                                                <i class="bi bi-trash"></i>
-                                            </button>
-                                        </div>
-                                        <div class="input-group mb-2">
-                                            <div class="input-group-text">
-                                                <input class="form-check-input mt-0" type="radio" name="correctAnswer" value="2">
-                                            </div>
-                                            <input type="text" class="form-control dark-input" placeholder="Option 2">
-                                            <button class="btn btn-outline-danger remove-option" type="button">
-                                                <i class="bi bi-trash"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <button type="button" class="btn btn-sm btn-outline-primary mt-2" id="addOptionBtn">
-                                        <i class="bi bi-plus-lg me-1"></i>Add Option
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-4">
-                            <div class="card sticky-top" style="top: 80px;">
-                                <div class="card-header">
-                                    <h5 class="mb-0">Question Details</h5>
-                                </div>
-                                <div class="card-body">
-                                    <div class="mb-3">
-                                        <label for="questionCategory" class="form-label">Category</label>
-                                        <select class="form-select dark-input" id="questionCategory" required>
-                                            <option value="">Select a category</option>
-                                            <option value="QSM">QSM</option>
-                                            <option value="PDF">PDF Files</option>
-                                        </select>
-                                    </div>
-                                    
-                                    <div class="mb-3">
-                                        <label for="questionDifficulty" class="form-label">Difficulty</label>
-                                        <select class="form-select dark-input" id="questionDifficulty">
-                                            <option value="easy">Easy</option>
-                                            <option value="medium" selected>Medium</option>
-                                            <option value="hard">Hard</option>
-                                        </select>
-                                    </div>
-                                    
-                                    <div class="mb-3">
-                                        <label for="questionTags" class="form-label">Tags</label>
-                                        <input type="text" class="form-control dark-input" id="questionTags" placeholder="Comma separated tags">
-                                    </div>
-                                    
-                                    <div class="mb-3">
-                                        <label for="questionPoints" class="form-label">Points</label>
-                                        <input type="number" class="form-control dark-input" id="questionPoints" min="1" value="1">
-                                    </div>
-                                    
-                                    <div class="mb-3 form-check">
-                                        <input type="checkbox" class="form-check-input" id="questionShuffle">
-                                        <label class="form-check-label" for="questionShuffle">Shuffle options</label>
-                                    </div>
-                                    
-                                    <div class="mb-3">
-                                        <label for="questionStatus" class="form-label">Status</label>
-                                        <select class="form-select dark-input" id="questionStatus">
-                                            <option value="draft">Draft</option>
-                                            <option value="published" selected>Published</option>
-                                            <option value="archived">Archived</option>
-                                        </select>
-                                    </div>
-                                    
-                                    <div class="d-grid gap-2">
-                                        <button type="submit" class="btn btn-primary">
-                                            <i class="bi bi-save me-1"></i>Save Question
-                                        </button>
-                                        <button type="button" class="btn btn-outline-secondary" id="previewQuestionBtn">
-                                            <i class="bi bi-eye me-1"></i>Preview
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </section>
-        </div>
+           
 
         <!-- Toast Notifications Container -->
         <div class="toast-container"></div>
-    </div>
-
-    <!-- Session Timeout Modal -->
-    <div class="modal fade" id="sessionTimeoutModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content dark-theme">
-                <div class="modal-header">
-                    <h5 class="modal-title">Session Expiring Soon</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Your session will expire in <span id="countdown">2</span> minutes. Would you like to extend your session?</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Logout</button>
-                    <button type="button" class="btn btn-primary" id="extendSession">Extend Session</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Question Preview Modal -->
-    <div class="modal fade" id="questionPreviewModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content dark-theme">
-                <div class="modal-header">
-                    <h5 class="modal-title">Question Preview</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <h4 id="previewQuestionTitle"></h4>
-                    <div class="mb-4" id="previewQuestionText"></div>
-                    
-                    <div id="previewOptionsContainer">
-                        <div class="form-check mb-2">
-                            <input class="form-check-input" type="radio" name="previewOptions" id="previewOption1">
-                            <label class="form-check-label" for="previewOption1">
-                                Option 1
-                            </label>
-                        </div>
-                        <div class="form-check mb-2">
-                            <input class="form-check-input" type="radio" name="previewOptions" id="previewOption2">
-                            <label class="form-check-label" for="previewOption2">
-                                Option 2
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
