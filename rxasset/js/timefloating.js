@@ -6,7 +6,7 @@ const lockOverlay = document.getElementById("lock-overlay");
 const submitBtn = document.getElementById("submit-btn");
 
 // Timer Settings
-let targetTime = new Date().getTime() + 60 * 25 * 1000; // 25 minute countdown
+let targetTime = new Date().getTime() + 60 * 40 * 1000; // 40 minute countdown
 let isWarningGiven = false;
 let isManuallySubmitted = false;
 const warningThreshold = 5000;
