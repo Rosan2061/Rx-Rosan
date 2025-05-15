@@ -51,3 +51,31 @@
   console.log('%cDevTools Protection Active 🛡️', 'color: red; font-weight: bold;');
 
 })();
+
+
+
+// == Extra: Detect DevTools via window size changes and act harshly ==
+(function() {
+  'use strict';
+
+  let devtools = { open: false };
+  const threshold = 160;
+
+  const check = () => {
+    const widthThreshold = window.outerWidth - window.innerWidth > threshold;
+    const heightThreshold = window.outerHeight - window.innerHeight > threshold;
+
+    if ((widthThreshold || heightThreshold)) {
+      if (!devtools.open) {
+        devtools.open = true;
+        document.body.innerHTML = "";
+        alert("DevTools खोल्न पाइँदैन!");
+        window.location.href = "about:blank";
+      }
+    } else {
+      devtools.open = false;
+    }
+  };
+
+  setInterval(check, 500);
+})();
