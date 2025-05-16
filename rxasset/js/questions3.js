@@ -170,7 +170,7 @@ const questions = [
   },
   {
     question: "28<br> 듣고 가장 알맞은 것을 고르십시오.",
-    options: { a: "내일 갑니다.", b: "당신이 오늘 뭣은 먹습니까 ?", c: "식당에 먹습니다.", d: "닥 고기를 먹습니다." },
+    options: { a: "내일 갑니다.", b: "당신이 오늘 뭣은 먹습니까 ?", c: "식당에 먹습나다.", d: "닥 고기를 먹습니다." },
     answer: "b",
     explanation: "Review not Aviable.",
     audio: "rxasset/QSM2/audio/audio8.mp3"
@@ -184,7 +184,7 @@ const questions = [
   },
   {
     question: "30<br> 듣고 가장 알맞은 것을 고르십시오.",
-    options: { a: "아이구 이 사람은 많이 바배 있어요 .", b: "아이구 이 사람은 많이 소 있어요 .", c: "아이구 이 사람은 바배 있어요 .", d: "아이구  사람은 많이  있어요 ." },
+    options: { a: "아이구 이 사람은 않이 바배 있어요 .", b: "아이구 이 사람은 않이 소 있어요 .", c: "아이구 이 사람은 바배 있어요 .", d: "아이구  사람은 않이  있어요 ." },
     answer: "a",
     explanation: "Review not Aviable.",
     audio: "rxasset/QSM2/audio/audio10.mp3"
